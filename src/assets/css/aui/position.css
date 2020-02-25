@@ -1,0 +1,84 @@
+
+/*
+---- position---
+*/
+.aui.position {
+    position: static;
+}
+
+.aui.position.static {
+    position: static !important;
+}
+
+.aui.position.relative {
+    position: relative !important;
+}
+
+.aui.position.absolute {
+    position: absolute !important;
+}
+
+.aui.position.fixed {
+    position: fixed !important;
+}
+
+.aui.position.sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+}
+
+.aui.position.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.aui.position.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.aui.position.top-left {
+    position: absolute;
+    top: .8rem;
+    left: 1.2rem;
+}
+
+.aui.position.top-right {
+    position: absolute;
+    top: .8rem;
+    right: 1.2rem;
+}
+
+.aui.position.bottom-left {
+    position: absolute;
+    bottom: .8rem;
+    left: 1.2rem;
+}
+
+.aui.position.bottom-right {
+    position: absolute;
+    right: 1.2rem;
+    bottom: .8rem;
+}
+
+.aui.position.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .aui.position.sticky-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+}

@@ -1,0 +1,123 @@
+/*
+--- 阴影 ---
+*/
+@import './variables.less';
+
+/* shadow color */
+.shadow {
+    box-shadow   : @shadow-size @color-theme;
+
+    /* shadow warp */
+    &-warp {
+        position: relative;
+
+        &:before,
+        &:after {
+            position  : absolute;
+            content   : "";
+            top       : .5rem;
+            bottom    : .75rem;
+            left      : .5rem;
+            width     : 50%;
+            box-shadow: 0 .75rem .5rem rgba(0, 0, 0, .2);
+            transform : rotate(-3deg);
+            z-index   : -1;
+        }
+        &:after {
+            right    : .5rem;
+            left     : auto;
+            transform: rotate(3deg);
+        }
+    }
+
+    /* shadow blur */
+    &-blur {
+        position: relative;
+
+        &:before {
+            content         : "";
+            display         : block;
+            background      : inherit;
+            -webkit-filter  : blur(.25rem);
+            filter          : blur(.25rem);
+            position        : absolute;
+            width           : 100%;
+            height          : 100%;
+            top             : .25rem;
+            left            : .25rem;
+            z-index         : -1;
+            opacity         : .4;
+            transform-origin: 0 0;
+            border-radius   : inherit;
+            transform       : scale(1, 1);
+        }
+    }
+
+    &-red {
+        box-shadow: @shadow-size @color-red !important;
+    }
+
+    &-orange {
+        box-shadow: @shadow-size @color-orange !important;
+    }
+
+    &-yellow {
+        box-shadow: @shadow-size @color-yellow !important;
+    }
+
+    &-olive {
+        box-shadow: @shadow-size @color-olive !important;
+    }
+
+    &-green {
+        box-shadow: @shadow-size @color-green !important;
+    }
+
+    &-cyan {
+        box-shadow: @shadow-size @color-cyan !important;
+    }
+
+    &-blue {
+        box-shadow: @shadow-size @color-blue !important;
+    }
+
+    &-purple {
+        box-shadow: @shadow-size @color-purple !important;
+    }
+
+    &-mauve {
+        box-shadow: @shadow-size @color-mauve !important;
+    }
+
+    &-pink {
+        box-shadow: @shadow-size @color-pink !important;
+    }
+
+    &-brown {
+        box-shadow: @shadow-size @color-brown !important;
+    }
+
+    &-grey {
+        box-shadow: @shadow-size @color-grey !important;
+    }
+
+    &-gray {
+        box-shadow: @shadow-size @color-gray !important;
+    }
+
+    &-silver {
+        box-shadow: @shadow-size @color-silver !important;
+    }
+
+    &-black {
+        box-shadow: @shadow-size @color-black !important;
+    }
+
+    &-dark {
+        box-shadow: @shadow-size @color-dark !important;
+    }
+
+    &-white {
+        box-shadow: @shadow-size @color-white !important;
+    }
+}

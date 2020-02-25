@@ -1,0 +1,135 @@
+
+/* ==================
+          徽章
+ ==================== */
+
+.aui.tag {
+    font-size: 12px;
+    vertical-align: middle;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:0 8px;
+    height: 24px;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+.aui.tag:not([class*="bg"]):not([class*="line"]) {
+    background-color: var(--ghostWhite);
+}
+
+.aui.tag[class*="line-"]::after {
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid currentColor;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: inherit;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.aui.tag.radius[class*="line"]::after {
+    border-radius: 6px;
+}
+
+.aui.tag.round[class*="line"]::after {
+    border-radius: 500px;
+}
+
+.aui.tag[class*="line-"]::after {
+    border-radius: 0;
+}
+
+.aui.tag+.aui.tag {
+    margin-left: 5px;
+}
+
+.aui.tag.sm {
+    font-size: 10px;
+    padding:0 6px;
+    height: 16px;
+}
+
+.aui.capsule {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.aui.capsule+.aui.capsule {
+    margin-left: 5px;
+}
+
+.aui.capsule .aui.tag {
+    margin: 0;
+}
+
+.aui.capsule .aui.tag[class*="line-"]:last-child::after {
+    border-left:0 solid transparent;
+}
+
+.aui.capsule .aui.tag[class*="line-"]:first-child::after {
+    border-right:0 solid transparent;
+}
+
+.aui.capsule.radius .aui.tag:first-child {
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+}
+
+.aui.capsule.radius .aui.tag:last-child::after,
+.aui.capsule.radius .aui.tag[class*="line-"] {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.aui.capsule.round .aui.tag:first-child {
+    border-top-left-radius:100px;
+    border-bottom-left-radius:100px;
+    text-indent: 4rpx;
+}
+
+.aui.capsule.round .aui.tag:last-child::after,
+.aui.capsule.round .aui.tag:last-child {
+    border-top-right-radius:100px;
+    border-bottom-right-radius:100px;
+    text-indent:-2px;
+}
+
+.aui.tag.badge {
+    border-radius:100px;
+    position: absolute;
+    top:-5px;
+    right:-5px;
+    font-size: 10px;
+    padding:0 5px;
+    height: 14px;
+    color: var(--white);
+}
+
+.aui.tag.badge:not([class*="bg-"]) {
+    background-color: #dd514c;
+}
+
+.aui.tag:empty:not([class*="cuIcon-"]) {
+    padding:0;
+    width: 8px;
+    height: 8px;
+    top:-2px;
+    right:-2px;
+}
+
+.aui.tag[class*="cuIcon-"] {
+    width: 16px;
+    height: 16px;
+    top:-2px;
+    right:-2px;
+}

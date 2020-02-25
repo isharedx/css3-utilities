@@ -1,0 +1,88 @@
+/*
+--- tips 提示 ---
+*/
+.tips,
+.tips-top,
+.tips-right,
+.tips-bottom,
+.tips-left {
+  position: relative;
+  /*color    : #333;*/
+  text-align: center !important;
+  /*font-size: 14px;*/
+  cursor: pointer;
+}
+.tips:hover::before {
+  content: attr(data-tips);
+  padding: 0.1rem 0.3rem;
+  /*border-radius: 5px;*/
+  border-radius: 0.25rem;
+  position: absolute;
+  z-index: 9999;
+  display: block;
+  background: black;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+}
+.tips:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 9999;
+}
+.tips-top:hover::before {
+  top: -0.25rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.tips-top:hover::after {
+  border-left: 0.25rem solid transparent;
+  border-top: 0.25rem solid #333;
+  border-right: 0.25rem solid transparent;
+  top: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tips-right:hover::before {
+  top: 50%;
+  right: -0.25rem;
+  transform: translate(100%, -50%);
+}
+.tips-right:hover::after {
+  border-top: 0.25rem solid transparent;
+  border-right: 0.25rem solid #333;
+  border-bottom: 0.25rem solid transparent;
+  top: 50%;
+  right: -0.25rem;
+  transform: translateY(-50%);
+}
+.tips-bottom:hover::before {
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+.tips-bottom:hover::after {
+  border-right: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid #333;
+  border-left: 0.25rem solid transparent;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tips-left:hover::before {
+  top: 50%;
+  left: -0.25rem;
+  transform: translate(-100%, -50%);
+}
+.tips-left:hover::after {
+  border-left: 0.25rem solid #333;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  top: 50%;
+  left: -0.25rem;
+  transform: translateY(-50%);
+}

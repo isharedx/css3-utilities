@@ -1,0 +1,17 @@
+/**
+ * == Gradient ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/variables.scss: colors
+// }
+.gra,
+.gradient {
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            @include gradient($color);
+        }
+    }
+}

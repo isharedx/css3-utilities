@@ -1,0 +1,63 @@
+/**
+ * == Float ==
+ */
+
+.float {
+    float: left;
+    &-left {
+        float: left;
+    }
+    &-right {
+        float: right;
+    }
+    &-top {
+        float: top;
+    }
+    &-bottom {
+        float: bottom;
+    }
+    &-start {
+        float: start;
+    }
+    &-end {
+        float: end;
+    }
+    &-none {
+        float: none;
+    }
+}
+
+.clear {
+    & {
+        clear: inherit;
+    }
+    &-top {
+        clear: top;
+    }
+    &-right {
+        clear: right;
+    }
+    &-bottom {
+        clear: bottom;
+    }
+    &-left {
+        clear: left;
+    }
+    &-none {
+        clear: none;
+    }
+    &-both {
+        clear: both;
+    }
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}

@@ -1,0 +1,15 @@
+/**
+ * == Display ==
+ */
+
+//
+// Dependences: {
+// }
+.display {
+    display: flex;
+    @each $value in $displays {
+        &-#{$value} {
+            display: $value !important;
+        }
+    }
+}

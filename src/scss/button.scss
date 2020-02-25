@@ -1,0 +1,153 @@
+/**
+ * == Button ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/button.scss: button-variant(),button-resize(),
+// }
+@import './mixins/button';
+.btn,
+.button {
+    // reset
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            outline: .5rem auto -webkit-focus-ring-color;
+            outline-offset: -.1rem;
+        }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: $color-theme;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        box-shadow: inset 0 .3rem .5rem rgba(0, 0, 0, .125);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        @include opacity(.65);
+        box-shadow: none;
+    }
+    // color
+    @include button-variant(); // $color-theme
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            @include button-variant($color);
+        }
+    }
+    // size
+    &-xl,
+    &-xl>#{&} {
+        @include button-resize(.625rem 1.25rem, 1.5rem, 1.5, .3rem)
+    }
+    &-lg,
+    &-lg>#{&} {
+        @include button-resize(.5rem 1rem, 1.25rem, 1.5, .3rem)
+    }
+    &-md,
+    &-md>#{&} {
+        @include button-resize(.375rem .75rem, 1rem, 1.5, .2rem);
+    }
+    &-sm,
+    &-sm>#{&} {
+        @include button-resize(.25rem .5rem, .75rem, 1.5, .2rem);
+    }
+    &-xs,
+    &-xs>#{&} {
+        @include button-resize(.125rem .25rem, .5rem, 1.5, .1rem);
+    }
+    // link
+    &-link {
+        color: $color-theme;
+        font-weight: normal;
+        border-radius: 0;
+        &,
+        &:active,
+        &.active,
+        &[disabled],
+        fieldset[disabled] & {
+            background-color: transparent;
+            box-shadow: none;
+        }
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: transparent;
+        }
+        &:hover,
+        &:focus {
+            color: $color-theme;
+            text-decoration: underline;
+            background-color: transparent;
+        }
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus {
+                color: $color-grey;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+a.btn.disabled,
+a.button.disabled,
+fieldset[disabled] a.btn,
+fieldset[disabled] a.button {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+}
+
+// Vertically space out multiple block buttons
+// .btn-block+.btn-block,
+// .button-block+.button-block {
+//     margin-top: 5px;
+// }
+.btn-block,
+.button-block {
+    display: block;
+    width: 100%;
+    // Vertically space out multiple block buttons
+    +.btn-block,
+    +.button-block {
+        margin-top: .25rem;
+    }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block,
+    &.button-block {
+        width: 100%;
+    }
+}

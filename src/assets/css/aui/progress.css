@@ -1,0 +1,94 @@
+.aui.progress {
+    /*min-width: 100px;*/
+    /*min-height: 200px;*/
+    padding: 1px;
+    /*border: 1px red solid;*/
+    position: fixed;
+    /*right: 1rem;*/
+    /*bottom: 1rem;*/
+    z-index: 1000;
+    opacity: .5;
+    display: flex;
+    flex-direction: column;
+    -webkit-transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+    transition: all 0.5s cubic-bezier(.77, .10, .22, 1);
+}
+
+.aui.progress:hover {
+    opacity: 1;
+}
+
+.aui.progress > .row {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 1px;
+    /*border: 1px red solid;*/
+    display: flex;
+    flex-wrap: nowrap;
+    /*left: 0;*/
+    /*position: static;*/
+    position: absolute;
+    /*-webkit-transform: translateX(-100%);*/
+    /*transform: translateX(-100%);*/
+}
+
+
+/* default progress page thumb */
+.aui.progress > .row > .col {
+    box-sizing: border-box;
+    width: 1rem;
+    height: 0.75rem;
+    /*overflow: hidden;*/
+    /*margin: 1px 3px;*/
+    /*margin-right: 3px;*/
+    /*margin-bottom: 1px;*/
+    border: 1px solid rgba(255, 255, 255, .6);
+    position: absolute;
+    /*top:0;*/
+    /*left: 0;*/
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    /*-webkit-transition: all 0.5s cubic-bezier(.77, .10, .22, 1);*/
+    /*transition: all 0.5s cubic-bezier(.77, .10, .22, 1);*/
+}
+
+.aui.progress > .row > .col:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.aui.progress > .row > .col.focus {
+    background-color: rgba(0, 128, 255, 0.7);
+}
+
+.aui.perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}
+
+.aui.perspective > .page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.aui.perspective > .page.current {
+    visibility: visible;
+    z-index: 1;
+}

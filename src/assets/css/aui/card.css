@@ -1,0 +1,218 @@
+
+/*
+--- card 卡片 ---
+*/
+.aui.cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.aui.cards > .aui.card {
+    margin-bottom: 15px;
+}
+
+/*@media (min-width: var(--breakpoint-sm)) or (min-width: 576px) {*/
+@media (min-width: 576px) {
+    .aui.cards.near,
+    .aui.cards.deck {
+        flex-direction: row;
+        flex-flow: row wrap;
+    }
+
+    .aui.cards.near > .aui.card {
+        flex: 1 0 0;
+        margin-bottom: 0;
+    }
+
+    .aui.cards.near > .aui.card + .aui.card {
+        margin-left: 0;
+        border-left: 0;
+    }
+
+    .aui.cards.near > .aui.card:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:first-child .aui.img-top,
+    .aui.cards.near > .aui.card:first-child .aui.img-right,
+    .aui.cards.near > .aui.card:first-child .aui.card__hd {
+        border-top-right-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:first-child .aui.img-right,
+    .aui.cards.near > .aui.card:first-child .aui.img-bottom,
+    .aui.cards.near > .aui.card:first-child .aui.card__ft {
+        border-bottom-right-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:last-child .aui.img-left,
+    .aui.cards.near > .aui.card:last-child .aui.img-top,
+    .aui.cards.near > .aui.card:last-child .aui.card__hd {
+        border-top-left-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:last-child .aui.img-bottom,
+    .aui.cards.near > .aui.card:last-child .aui.img-left,
+    .aui.cards.near > .aui.card:last-child .aui.card__ft {
+        border-bottom-left-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:only-child {
+        border-radius: .25rem;
+    }
+
+    .aui.cards.near > .aui.card:only-child .aui.img-left,
+    .aui.cards.near > .aui.card:only-child .aui.img-top,
+    .aui.cards.near > .aui.card:only-child .aui.img-right,
+    .aui.cards.near > .aui.card:only-child .aui.card__hd {
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+    }
+
+    .aui.cards.near > .aui.card:only-child .aui.img-right,
+    .aui.cards.near > .aui.card:only-child .aui.img-bottom,
+    .aui.cards.near > .aui.card:only-child .aui.img-left,
+    .aui.cards.near > .aui.card:only-child .aui.card__ft {
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) {
+        border-radius: 0;
+    }
+
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.img-top,
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.img-right,
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.img-bottom,
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.img-left,
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.card__hd,
+    .aui.cards.near > .aui.card:not(:first-child):not(:last-child):not(:only-child) .aui.card__ft {
+        border-radius: 0;
+    }
+
+    .aui.cards.deck {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .aui.cards.deck > .aui.card {
+        flex: 1 0 0;
+        margin-right: 15px;
+        margin-bottom: 0;
+        margin-left: 15px;
+    }
+
+    .aui.cards.flow {
+        display: block;
+        -moz-column-count: 3;
+        column-count: 3;
+        -moz-column-gap: 1.25rem;
+        column-gap: 1.25rem;
+    }
+
+    .aui.cards.flow .aui.card {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: .75rem;
+    }
+}
+
+.aui.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.aui.card > hr {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.aui.card .aui.list:first-child .aui.list-item:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.aui.card .aui.list:last-child .aui.list-item:last-child {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.aui.card .aui.card__hd {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.aui.card .aui.card__hd:first-child {
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.aui.card .aui.card__hd + .aui.list .aui.list-item:first-child {
+    border-top: 0;
+}
+
+.aui.card .aui.card__bd {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.aui.card .aui.card__ft {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, .03);
+    border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.aui.card .aui.card__ft:last-child {
+    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+
+.aui.card .aui.img,
+.aui.card .aui.img-top,
+.aui.card .aui.img-right,
+.aui.card .aui.img-bottom,
+.aui.card .aui.img-left {
+    width: 100%;
+    border-radius: calc(0.25rem - 1px);
+}
+
+.aui.card .aui.img.img-top {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.aui.card .aui.img.img-right {
+    height: 100%;
+    border-radius: 0 calc(.25rem - 1px) calc(.25rem - 1px) 0;
+}
+
+.aui.card .aui.img.img-bottom {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.aui.card .aui.img.img-left {
+    height: 100%;
+    border-radius: calc(.25rem - 1px) 0 0 calc(.25rem - 1px);
+}
+
+.aui.card .aui.img + .aui.img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+

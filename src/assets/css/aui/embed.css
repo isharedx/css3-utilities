@@ -1,0 +1,47 @@
+
+/*
+---- embed 嵌入---
+*/
+
+.aui.embed {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.aui.embed::before {
+    display: block;
+    content: "";
+}
+
+.aui.embed .aui.embed-item,
+.aui.embed iframe,
+.aui.embed embed,
+.aui.embed object,
+.aui.embed video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.aui.embed .aui.aspect-21by9::before {
+    padding-top: 42.857143%;
+}
+
+.aui.embed .aui.aspect-16by9::before {
+    padding-top: 56.25%;
+}
+
+.aui.embed .aui.aspect-4by3::before {
+    padding-top: 75%;
+}
+
+.aui.embed .aui.aspect-1by1::before {
+    padding-top: 100%;
+}

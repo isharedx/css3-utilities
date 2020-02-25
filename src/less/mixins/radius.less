@@ -1,0 +1,94 @@
+.radius-init(@size-tag; @size; @type) when (@type=all) {
+    .radius@{size-tag} {
+        border-radius: @size;
+    }
+}
+
+.radius-init(@size-tag; @size; @type) when (@type=top) {
+
+    .radius-t@{size-tag},
+    .radius-top@{size-tag} {
+        border-top-left-radius : calc(1rem * @size) !important;
+        border-top-right-radius: calc(1rem * @size) !important;
+    }
+}
+
+.radius-init(@size-tag; @size; @type) when (@type=right) {
+
+    .radius-r@{size-tag},
+    .radius-right@{size-tag} {
+        border-top-right-radius   : calc(1rem * @size) !important;
+        border-bottom-right-radius: calc(1rem * @size) !important;
+    }
+}
+
+.radius-init(@size-tag; @size; @type) when (@type=bottom) {
+
+    .radius-b@{size-tag},
+    .radius-bottom@{size-tag} {
+        border-bottom-left-radius : calc(1rem * @size) !important;
+        border-bottom-right-radius: calc(1rem * @size) !important;
+    }
+}
+
+.radius-init(@size-tag; @size; @type) when (@type=left) {
+
+    .radius-l@{size-tag},
+    .radius-left@{size-tag} {
+        border-top-left-radius   : calc(1rem * @size) !important;
+        border-bottom-left-radius: calc(1rem * @size) !important;
+    }
+}
+
+.radius-make() {
+
+    .radius-init(~""; @size; all);
+    .radius-init(~"-no"; @size-no; all);
+    .radius-init(~"-xs"; @size-xs; all);
+    .radius-init(~"-sm"; @size-sm; all);
+    .radius-init(~"-md"; @size-md; all);
+    .radius-init(~"-lg"; @size-lg; all);
+    .radius-init(~"-xl"; @size-xl; all);
+    .radius-init(~"-round"; 3000rem; all);
+    .radius-init(~"-circle"; 50%; all);
+
+    .radius-init(~""; @size; top);
+    .radius-init(~"-no"; @size-no; top);
+    .radius-init(~"-xs"; @size-xs; top);
+    .radius-init(~"-sm"; @size-sm; top);
+    .radius-init(~"-md"; @size-md; top);
+    .radius-init(~"-lg"; @size-lg; top);
+    .radius-init(~"-xl"; @size-xl; top);
+    .radius-init(~"-round"; 3000rem; top);
+    .radius-init(~"-circle"; 50%; top);
+
+    .radius-init(~""; @size; right);
+    .radius-init(~"-no"; @size-no; right);
+    .radius-init(~"-xs"; @size-xs; right);
+    .radius-init(~"-sm"; @size-sm; right);
+    .radius-init(~"-md"; @size-md; right);
+    .radius-init(~"-lg"; @size-lg; right);
+    .radius-init(~"-xl"; @size-xl; right);
+    .radius-init(~"-round"; 3000rem; right);
+    .radius-init(~"-circle"; 50%; right);
+
+    .radius-init(~""; @size; bottom);
+    .radius-init(~"-no"; @size-no; bottom);
+    .radius-init(~"-xs"; @size-xs; bottom);
+    .radius-init(~"-sm"; @size-sm; bottom);
+    .radius-init(~"-md"; @size-md; bottom);
+    .radius-init(~"-lg"; @size-lg; bottom);
+    .radius-init(~"-xl"; @size-xl; bottom);
+    .radius-init(~"-round"; 3000rem; bottom);
+    .radius-init(~"-circle"; 50%; bottom);
+
+    .radius-init(~""; @size; left);
+    .radius-init(~"-no"; @size-no; left);
+    .radius-init(~"-xs"; @size-xs; left);
+    .radius-init(~"-sm"; @size-sm; left);
+    .radius-init(~"-md"; @size-md; left);
+    .radius-init(~"-lg"; @size-lg; left);
+    .radius-init(~"-xl"; @size-xl; left);
+    .radius-init(~"-round"; 3000rem; left);
+    .radius-init(~"-circle"; 50%; left);
+}

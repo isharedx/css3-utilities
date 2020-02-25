@@ -1,0 +1,203 @@
+/* theme-XXX*/
+.aui.theme-red {
+    --theme: var(--red) !important; /* 嫣红 */
+    --pale-theme: var(--pale-red) !important;
+    --dark-theme: var(--dark-red) !important;
+    --gradient-theme: var(--gradient-red) !important;
+    --shadow-theme: var(--shadow-red) !important;
+    --focus-theme: var(--focus-red) !important;
+    --hover-theme: var(--hover-red) !important;
+    --badge-theme: var(--badge-red) !important;
+    --txt-theme: var(--txt-red) !important;
+}
+
+
+.aui.theme-orange {
+    --theme: var(--orange) !important; /* 桔橙 */
+    --pale-theme: var(--pale-orange) !important;
+    --dark-theme: var(--dark-orange) !important;
+    --gradient-theme: var(--gradient-orange) !important;
+    --shadow-theme: var(--shadow-orange) !important;
+    --focus-theme: var(--focus-orange) !important;
+    --hover-theme: var(--hover-orange) !important;
+    --badge-theme: var(--badge-orange) !important;
+    --txt-theme: var(--txt-orange) !important;
+}
+
+
+.aui.theme-yellow {
+    --theme: var(--yellow) !important; /* 明黄 */
+    --pale-theme: var(--pale-yellow) !important;
+    --dark-theme: var(--dark-yellow) !important;
+    --gradient-theme: var(--gradient-yellow) !important;
+    --shadow-theme: var(--shadow-yellow) !important;
+    --focus-theme: var(--focus-yellow) !important;
+    --hover-theme: var(--hover-yellow) !important;
+    --badge-theme: var(--badge-yellow) !important;
+    --txt-theme: var(--txt-yellow) !important;
+}
+
+
+.aui.theme-olive {
+    --theme: var(--olive) !important; /* 橄榄 */
+    --pale-theme: var(--pale-olive) !important;
+    --dark-theme: var(--dark-olive) !important;
+    --gradient-theme: var(--gradient-olive) !important;
+    --shadow-theme: var(--shadow-olive) !important;
+    --focus-theme: var(--focus-olive) !important;
+    --hover-theme: var(--hover-olive) !important;
+    --badge-theme: var(--badge-olive) !important;
+    --txt-theme: var(--txt-olive) !important;
+}
+
+
+.aui.theme-green {
+    --theme: var(--green) !important; /* 森绿 */
+    --pale-theme: var(--pale-green) !important;
+    --dark-theme: var(--dark-green) !important;
+    --gradient-theme: var(--gradient-green) !important;
+    --shadow-theme: var(--shadow-green) !important;
+    --focus-theme: var(--focus-green) !important;
+    --hover-theme: var(--hover-green) !important;
+    --badge-theme: var(--badge-green) !important;
+    --txt-theme: var(--txt-green) !important;
+}
+
+
+.aui.theme-cyan {
+    --theme: var(--cyan) !important; /* 天青 */
+    --pale-theme: var(--pale-cyan) !important;
+    --dark-theme: var(--dark-cyan) !important;
+    --gradient-theme: var(--gradient-cyan) !important;
+    --shadow-theme: var(--shadow-cyan) !important;
+    --focus-theme: var(--focus-cyan) !important;
+    --hover-theme: var(--hover-cyan) !important;
+    --badge-theme: var(--badge-cyan) !important;
+    --txt-theme: var(--txt-cyan) !important;
+}
+
+
+.aui.theme-blue {
+    --theme: var(--blue) !important; /* 海蓝 */
+    --pale-theme: var(--pale-blue) !important;
+    --dark-theme: var(--dark-blue) !important;
+    --gradient-theme: var(--gradient-blue) !important;
+    --shadow-theme: var(--shadow-blue) !important;
+    --focus-theme: var(--focus-blue) !important;
+    --hover-theme: var(--hover-blue) !important;
+    --badge-theme: var(--badge-blue) !important;
+    --txt-theme: var(--txt-blue) !important;
+}
+
+
+.aui.theme-purple {
+    --theme: var(--purple) !important; /* 姹紫 */
+    --pale-theme: var(--pale-purple) !important;
+    --dark-theme: var(--dark-purple) !important;
+    --gradient-theme: var(--gradient-purple) !important;
+    --shadow-theme: var(--shadow-purple) !important;
+    --focus-theme: var(--focus-purple) !important;
+    --hover-theme: var(--hover-purple) !important;
+    --badge-theme: var(--badge-purple) !important;
+    --txt-theme: var(--txt-purple) !important;
+}
+
+
+.aui.theme-mauve {
+    --theme: var(--mauve) !important; /* 木槿 */
+    --pale-theme: var(--pale-mauve) !important;
+    --dark-theme: var(--dark-mauve) !important;
+    --gradient-theme: var(--gradient-mauve) !important;
+    --shadow-theme: var(--shadow-mauve) !important;
+    --focus-theme: var(--focus-mauve) !important;
+    --hover-theme: var(--hover-mauve) !important;
+    --badge-theme: var(--badge-mauve) !important;
+    --txt-theme: var(--txt-mauve) !important;
+}
+
+
+.aui.theme-pink {
+    --theme: var(--pink) !important; /* 桃粉 */
+    --pale-theme: var(--pale-pink) !important;
+    --dark-theme: var(--dark-pink) !important;
+    --gradient-theme: var(--gradient-pink) !important;
+    --shadow-theme: var(--shadow-pink) !important;
+    --focus-theme: var(--focus-pink) !important;
+    --hover-theme: var(--hover-pink) !important;
+    --badge-theme: var(--badge-pink) !important;
+    --txt-theme: var(--txt-pink) !important;
+}
+
+
+.aui.theme-brown {
+    --theme: var(--brown) !important; /* 棕褐 */
+    --pale-theme: var(--pale-brown) !important;
+    --dark-theme: var(--dark-brown) !important;
+    --gradient-theme: var(--gradient-brown) !important;
+    --shadow-theme: var(--shadow-brown) !important;
+    --focus-theme: var(--focus-brown) !important;
+    --hover-theme: var(--hover-brown) !important;
+    --badge-theme: var(--badge-brown) !important;
+    --txt-theme: var(--txt-brown) !important;
+}
+
+
+.aui.theme-grey {
+    --theme: var(--grey) !important; /* 玄灰 */
+    --pale-theme: var(--pale-grey) !important;
+    --dark-theme: var(--dark-grey) !important;
+    --gradient-theme: var(--gradient-grey) !important;
+    --shadow-theme: var(--shadow-grey) !important;
+    --focus-theme: var(--focus-grey) !important;
+    --hover-theme: var(--hover-grey) !important;
+    --badge-theme: var(--badge-grey) !important;
+    --txt-theme: var(--txt-grey) !important;
+}
+
+
+.aui.theme-gray {
+    --theme: var(--gray) !important; /* 草灰 */
+    --pale-theme: var(--pale-gray) !important;
+    --dark-theme: var(--dark-gray) !important;
+    --gradient-theme: var(--gradient-gray) !important;
+    --shadow-theme: var(--shadow-gray) !important;
+    --focus-theme: var(--focus-gray) !important;
+    --hover-theme: var(--hover-gray) !important;
+    --badge-theme: var(--badge-gray) !important;
+    --txt-theme: var(--txt-gray) !important;
+}
+
+
+.aui.theme-black {
+    --theme: var(--black) !important; /* 墨黑 */
+    --pale-theme: var(--pale-black) !important;
+    --dark-theme: var(--dark-black) !important;
+    --gradient-theme: var(--gradient-black) !important;
+    --shadow-theme: var(--shadow-black) !important;
+    --focus-theme: var(--focus-black) !important;
+    --hover-theme: var(--hover-black) !important;
+    --badge-theme: var(--badge-black) !important;
+    --txt-theme: var(--txt-black) !important;
+}
+
+
+.aui.theme-dark {
+    --theme: var(--dark) !important; /* 纯黑 */
+    --shadow-theme: var(--shadow-dark) !important;
+    --focus-theme: var(--focus-dark) !important;
+    --hover-theme: var(--hover-dark) !important;
+    --badge-theme: var(--badge-dark) !important;
+    --txt-theme: var(--txt-dark) !important;
+}
+
+
+.aui.theme-white {
+    --theme: var(--white) !important; /* 雅白 */
+    --gradient-theme: var(--gradient-white) !important;
+    --shadow-theme: var(--shadow-white) !important;
+    --focus-theme: var(--focus-white) !important;
+    --hover-theme: var(--hover-white) !important;
+    --badge-theme: var(--badge-white) !important;
+    --txt-theme: var(--txt-white) !important;
+}
+

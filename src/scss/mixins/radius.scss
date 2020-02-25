@@ -1,0 +1,94 @@
+// 
+// Radius Mixins
+//
+// Dependences: {
+//     ./maxins/variables.scss: sizes,
+// }
+@mixin radius-init-all($size) {
+    border-radius: $size;
+}
+
+@mixin radius-init-top($size) {
+    border-top-left-radius: $size;
+    border-top-right-radius: $size;
+}
+
+@mixin radius-init-right($size) {
+    border-top-right-radius: $size;
+    border-bottom-right-radius: $size;
+}
+
+@mixin radius-init-bottom($size) {
+    border-bottom-left-radius: $size;
+    border-bottom-right-radius: $size;
+}
+
+@mixin radius-init-left($size) {
+    border-top-left-radius: $size;
+    border-bottom-left-radius: $size;
+}
+
+@mixin radius-init($dir, $size) {
+    @if $dir=="all" {
+        @include radius-init-all($size);
+    }
+    @else if $dir=="top" {
+        @include radius-init-top($size);
+    }
+    @else if $dir=="right" {
+        @include radius-init-right($size);
+    }
+    @else if $dir=="bottom" {
+        @include radius-init-bottom($size);
+    }
+    @else if $dir=="left" {
+        @include radius-init-left($size);
+    }
+}
+
+@mixin radius-make() {
+    @each $dir-key,
+    $dir-val in $directions {
+        @each $size-key,
+        $size-val in $sizes {
+            $suffix: -#{$size-key};
+            @if $dir-key=="primary" {
+                // Like: radius
+                @if $size-key=="primary" {
+                    // Like: radius
+                    $suffix: "";
+                    &-circle {
+                        @include radius-init($dir-val, 50%);
+                    }
+                    &-rounded {
+                        @include radius-init($dir-val, 3000rem);
+                    }
+                }
+                // Like: radius-xs, ...
+                &#{$suffix} {
+                    @include radius-init($dir-val, $size-val);
+                }
+            }
+            @else {
+                // Like: radius-left, ...
+                @if $size-key=="primary" {
+                    // Like: radius, ...
+                    $suffix: "";
+                    &-#{$dir-key}-circle,
+                    &-#{$dir-val}-circle {
+                        @include radius-init($dir-val, 50%);
+                    }
+                    &-#{$dir-key}-rounded,
+                    &-#{$dir-val}-rounded {
+                        @include radius-init($dir-val, 3000rem);
+                    }
+                }
+                // Like: radius-t-xs,radius-top-xs, ...
+                &-#{$dir-key}#{$suffix},
+                &-#{$dir-val}#{$suffix} {
+                    @include radius-init($dir-val, $size-val);
+                }
+            }
+        }
+    }
+}

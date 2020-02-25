@@ -1,0 +1,56 @@
+/*
+---- float---
+*/
+.float {
+  float: inherit;
+}
+.float-left {
+  float: left !important;
+}
+.float-right {
+  float: right !important;
+}
+.float-top {
+  float: top;
+}
+.float-bottom {
+  float: bottom;
+}
+.float-start {
+  float: start;
+}
+.float-end {
+  float: end;
+}
+.float-none {
+  float: none !important;
+}
+.clear {
+  clear: inherit;
+}
+.clear-top {
+  clear: top;
+}
+.clear-right {
+  clear: right;
+}
+.clear-bottom {
+  clear: bottom;
+}
+.clear-left {
+  clear: left;
+}
+.clear-none {
+  clear: none;
+}
+.clear-both {
+  clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}

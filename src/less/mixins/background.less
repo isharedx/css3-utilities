@@ -1,0 +1,185 @@
+@import './gradients.less';
+
+.background-variant(@color) {
+    background-color: @color;
+
+    a&:hover,
+    a&:focus {
+        background-color: darken(@color, 10%);
+    }
+}
+
+.background-make-color() {
+    .background-variant(@color-theme);
+    color: @color-white;
+
+    &-red {
+        .background-variant(@color-red);
+        color: @color-white;
+    }
+
+    &-orange {
+        .background-variant(@color-orange);
+        color: @color-white;
+    }
+
+    &-yellow {
+        .background-variant(@color-yellow);
+        color: @color-white;
+    }
+
+    &-olive {
+        .background-variant(@color-olive);
+        color: @color-white;
+    }
+
+    &-green {
+        .background-variant(@color-green);
+        color: @color-white;
+    }
+
+    &-cyan {
+        .background-variant(@color-cyan);
+        color: @color-white;
+    }
+
+    &-blue {
+        .background-variant(@color-blue);
+        color: @color-white;
+    }
+
+    &-purple {
+        .background-variant(@color-purple);
+        color: @color-white;
+    }
+
+    &-mauve {
+        .background-variant(@color-mauve);
+        color: @color-white;
+    }
+
+    &-pink {
+        .background-variant(@color-pink);
+        color: @color-white;
+    }
+
+    &-brown {
+        .background-variant(@color-brown);
+        color: @color-white;
+    }
+
+    &-grey {
+        .background-variant(@color-grey);
+        color: @color-black;
+    }
+
+    &-gray {
+        .background-variant(@color-gray);
+        color: @color-black;
+    }
+
+    &-silver {
+        .background-variant(@color-silver);
+        color: @color-white;
+    }
+
+    &-black {
+        .background-variant(@color-black);
+        color: @color-white;
+    }
+
+    &-dark {
+        .background-variant(@color-dark);
+        color: @color-white;
+    }
+
+    &-white {
+        .background-variant(@color-white);
+        color: @color-black;
+    }
+}
+
+.background-make-image() {
+    #gradient>.vertical(@start-color: lighten(@color-theme, 10%); @end-color: @color-theme);
+    color                           : @color-white;
+
+    &-orange {
+        #gradient>.vertical(@start-color: lighten(@color-orange, 10%); @end-color: @color-orange);
+        color                           : @color-white;
+    }
+
+    &-yellow {
+        #gradient>.vertical(@start-color: lighten(@color-yellow, 10%); @end-color: @color-yellow);
+        color                           : @color-white;
+    }
+
+    &-olive {
+        #gradient>.vertical(@start-color: lighten(@color-olive, 10%); @end-color: @color-olive);
+        color                           : @color-white;
+    }
+
+    &-green {
+        #gradient>.vertical(@start-color: lighten(@color-green, 10%); @end-color: @color-green);
+        color                           : @color-white;
+    }
+
+    &-cyan {
+        #gradient>.vertical(@start-color: lighten(@color-cyan, 10%); @end-color: @color-cyan);
+        color                           : @color-white;
+    }
+
+    &-blue {
+        #gradient>.vertical(@start-color: lighten(@color-blue, 10%); @end-color: @color-blue);
+        color                           : @color-white;
+    }
+
+    &-purple {
+        #gradient>.vertical(@start-color: lighten(@color-purple, 10%); @end-color: @color-purple);
+        color                           : @color-white;
+    }
+
+    &-mauve {
+        #gradient>.vertical(@start-color: lighten(@color-mauve, 10%); @end-color: @color-mauve);
+        color                           : @color-white;
+    }
+
+    &-pink {
+        #gradient>.vertical(@start-color: lighten(@color-pink, 10%); @end-color: @color-pink);
+        color                           : @color-white;
+    }
+
+    &-brown {
+        #gradient>.vertical(@start-color: lighten(@color-brown, 10%); @end-color: @color-brown);
+        color                           : @color-white;
+    }
+
+    &-grey {
+        #gradient>.vertical(@start-color: lighten(@color-grey, 10%); @end-color: @color-grey);
+        color                           : @color-black;
+    }
+
+    &-gray {
+        #gradient>.vertical(@start-color: lighten(@color-gray, 10%); @end-color: @color-gray);
+        color                           : @color-black;
+    }
+
+    &-silver {
+        #gradient>.vertical(@start-color: lighten(@color-silver, 10%); @end-color: @color-silver);
+        color                           : @color-white;
+    }
+
+    &-black {
+        #gradient>.vertical(@start-color: lighten(@color-black, 10%); @end-color: @color-black);
+        color                           : @color-white;
+    }
+
+    &-dark {
+        #gradient>.vertical(@start-color: lighten(@color-dark, 10%); @end-color: @color-dark);
+        color                           : @color-white;
+    }
+
+    &-white {
+        #gradient>.vertical(@start-color: lighten(@color-white, 10%); @end-color: @color-white);
+        color                           : @color-black;
+    }
+}

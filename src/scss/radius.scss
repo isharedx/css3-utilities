@@ -1,0 +1,13 @@
+/**
+ * == Radius ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/radius.scss: radius-make(),
+// }
+@import './mixins/radius';
+.r,
+.radius {
+    @include radius-make();
+}

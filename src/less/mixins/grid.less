@@ -1,0 +1,151 @@
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+.grid-init-container() {
+  max-width    : 100%;
+  margin-right : auto;
+  margin-left  : auto;
+  padding-left : floor((@grid-gutter-width / 2));
+  padding-right: ceil((@grid-gutter-width / 2));
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+.grid-init-row() {
+  width    : 100%;
+  display  : flex;
+  flex-wrap: wrap;
+}
+
+.grid-init-columns() {
+
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) {
+    // initial
+    @item: ~".col-@{index}, .xs-col-@{index}, .sm-col-@{index}, .md-col-@{index}, .lg-col-@{index}, .xl-col-@{index}";
+    .col((@index + 1), @item);
+  }
+
+  .col(@index, @list) when (@index =< @grid-columns) {
+    // general; "=<" isn't a typo
+    @item: ~".col-@{index}, .xs-col-@{index}, .sm-col-@{index}, .md-col-@{index}, .lg-col-@{index}, .xl-col-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+
+  .col(@index, @list) when (@index > @grid-columns) {
+
+    // terminal
+    @{list} {
+      position: relative;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left : ceil((@grid-gutter-width / 2));
+      padding-right: floor((@grid-gutter-width / 2));
+      flex-basis   : 0;
+      flex-grow    : 1;
+    }
+  }
+
+  .col(1); // kickstart it
+}
+
+// width
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =width) and (@index > 0) {
+  @width: percentage((@index / @grid-columns));
+
+  .@{screen-tag}col-@{index} {
+    flex     : 0 0 @width;
+    width    : @width;
+    max-width: @width;
+  }
+}
+
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =width) and (@index =0) {
+  .@{screen-tag}col-0 {
+    flex     : 0 0 0;
+    width    : 0;
+    max-width: 0;
+  }
+
+  .@{screen-tag}col-auto {
+    flex     : 0 0 auto;
+    width    : auto;
+    max-width: 100%;
+  }
+}
+
+// push
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =push) and (@index > 0) {
+  .@{screen-tag}col-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+}
+
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =push) and (@index =0) {
+  .@{screen-tag}col-push-0 {
+    left: auto;
+  }
+}
+
+// pull
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =pull) and (@index > 0) {
+  .@{screen-tag}col-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+}
+
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =pull) and (@index =0) {
+  .@{screen-tag}col-pull-0 {
+    right: auto;
+  }
+}
+
+// order
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =order) and (@index > 0) {
+  .@{screen-tag}col-order-@{index} {
+    order: @index;
+  }
+}
+
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =order) and (@index =0) {
+  .@{screen-tag}col-order-0 {
+    right: auto;
+  }
+
+  .@{screen-tag}col-order-first {
+    order: -1;
+  }
+
+  .@{screen-tag}col-order-last {
+    order: @grid-columns+1;
+  }
+}
+
+.grid-calc-column-size(@index, @screen-tag, @type) when (@type =offset) {
+  .@{screen-tag}col-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.grid-loop-calc-column-size(@index, @screen-tag, @type) when (@index >=0) {
+  .grid-calc-column-size(@index, @screen-tag, @type);
+  // next iteration
+  .grid-loop-calc-column-size((@index - 1), @screen-tag, @type);
+}
+
+// Create grid for specific class
+.grid-make-columns(@screen-tag) {
+  .grid-loop-calc-column-size(@grid-columns, @screen-tag, width);
+  .grid-loop-calc-column-size(@grid-columns, @screen-tag, pull);
+  .grid-loop-calc-column-size(@grid-columns, @screen-tag, push);
+  .grid-loop-calc-column-size(@grid-columns, @screen-tag, order);
+  .grid-loop-calc-column-size(@grid-columns, @screen-tag, offset);
+}
+

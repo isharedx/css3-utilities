@@ -1,0 +1,94 @@
+
+/*
+--- list 列表 ---
+ */
+.aui.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.aui.list.flush .aui.list-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+}
+
+.aui.list.flush:first-child .aui.list-item:first-child {
+    border-top: 0;
+}
+
+.aui.list.flush:last-child .aui.list-item:last-child {
+    border-bottom: 0;
+}
+
+.aui.list .list-item {
+    width: 100%;
+    height: auto;
+    /*padding: .75rem 1.25rem;*/
+    margin-bottom: -1px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    position: relative;
+    display: block;
+    background-color: #fff;
+}
+
+.aui.list .list-item:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.aui.list .list-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.aui.list .list-item:only-child {
+    margin-bottom: 0;
+    border-radius: .25rem;
+}
+
+.aui.list .list-item:hover,
+.aui.list .list-item:focus {
+    z-index: 1;
+    text-decoration: none;
+}
+
+
+.aui.list.horizontal {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+    list-style: none;
+}
+
+.aui.list.horizontal .aui.list-item {
+    width: auto;
+    padding: .25rem .75rem;
+    margin-bottom: unset;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.aui.list.horizontal .aui.list-item:not(:last-child) {
+    /*margin-right: .5rem;*/
+    border-right: 0;
+}
+
+ul.aui.list,
+ol.aui.list,
+ul.aui.list-item,
+ol.aui.list-item,
+li.aui.list-item {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}

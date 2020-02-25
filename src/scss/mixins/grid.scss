@@ -1,0 +1,124 @@
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+@mixin grid-init-container() {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: floor(($grid-gutter-width / 2));
+    padding-right: ceil(($grid-gutter-width / 2));
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+@mixin grid-init-row() {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin grid-init-columns() {
+    $piece: "";
+    @for $index from 1 through $grid-columns {
+        @if $piece !="" {
+            $piece: "#{$piece},";
+        }
+        $piece: "#{$piece} .col-#{$index}, .xs-col-#{$index}, .sm-col-#{$index}, .md-col-#{$index}, .lg-col-#{$index}, .xl-col-#{$index}";
+    }
+    // terminal
+    #{$piece} {
+        position: relative;
+        // Prevent columns from collapsing when empty
+        min-height: 1px;
+        // Inner gutter via padding
+        padding-left: ceil(($grid-gutter-width / 2));
+        padding-right: floor(($grid-gutter-width / 2));
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+}
+
+@mixin grid-calc-columns($prefix, $type) {
+    @for $index from 0 through $grid-columns {
+        // width
+        @if ($type=="width") {
+            @if ($index==0) {
+                .#{$prefix}col-auto {
+                    flex: 0 0 auto;
+                    width: auto;
+                    max-width: 100%;
+                }
+            }
+            $width: percentage($index / $grid-columns);
+            .#{$prefix}col-#{$index} {
+                flex: 0 0 $width;
+                width: $width;
+                max-width: $width;
+            }
+        }
+        // push
+        @else if ($type=="push") {
+            @if($index==0) {
+                .#{$prefix}col-push-auto {
+                    left: auto;
+                }
+            }
+            .#{$prefix}col-push-#{$index} {
+                left: percentage(($index / $grid-columns));
+            }
+        }
+        // pull
+        @else if ($type=="pull") {
+            @if ($index==0) {
+                .#{$prefix}col-pull-auto {
+                    right: auto;
+                }
+            }
+            .#{$prefix}col-pull-#{$index} {
+                right: percentage(($index / $grid-columns));
+            }
+        }
+        // order
+        @else if ($type=="order") {
+            @if ($index==0) {
+                .#{$prefix}col-order-first {
+                    order: -1;
+                }
+                .#{$prefix}col-order-last {
+                    order: $grid-columns+1;
+                }
+            }
+            .#{$prefix}col-order-#{$index} {
+                order: $index;
+            }
+        }
+        // offset
+        @else if ($type=="offset") {
+            .#{$prefix}col-offset-#{$index} {
+                margin-left: percentage(($index / $grid-columns));
+            }
+        }
+    }
+}
+
+// Create grid for specific class
+@mixin grid-make-columns() {
+    $properties: width, pull, push, order, offset;
+    @include grid-init-columns();
+    @each $key,
+    $bp in $breakpoints {
+        @each $property in $properties {
+            $prefix:#{$key}-;
+            @if $key=="primary" {
+                $prefix: "";
+            }
+            @media screen and (min-width: $bp) {
+                @include grid-calc-columns($prefix, $property);
+            }
+        }
+    }
+}

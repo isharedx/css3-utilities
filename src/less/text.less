@@ -1,0 +1,109 @@
+@import './variables.less';
+@import './mixins/text.less';
+
+/*
+---- text---
+*/
+
+.text {
+    .text-reset();
+    font-size     : @font-size-base;
+    font-weight   : 400;
+    line-height   : @line-height-computed;
+    white-space   : pre-wrap;
+    overflow      : auto;
+    vertical-align: baseline;
+}
+
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+.text-truncate {
+    overflow        : hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow   : ellipsis;
+    white-space     : nowrap;
+}
+
+
+/* 图像替换 */
+
+.text-hide {
+    font            : 0/0 a;
+    color           : transparent;
+    text-shadow     : none;
+    background-color: transparent;
+    border          : 0;
+}
+
+
+/* 货币 */
+
+.text-RMB::before {
+    content     : "¥";
+    font-size   : 80%;
+    margin-right: 2px;
+}
+
+.text-dollar::before {
+    content     : "$";
+    font-size   : 80%;
+    margin-right: 2px;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* text-transform */
+
+.text-abc,
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-ABC,
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-Abc,
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+
+/* font-weight */
+
+.text-light {
+    font-weight: 300 !important;
+}
+
+.text-bold {
+    font-weight: 700 !important;
+}
+
+/* color */
+.text {
+    .text-make-color();
+}
+
+
+/* text-shadow */
+.text-sha,
+.text-shadow {
+    .text-make-shadow();
+}

@@ -1,0 +1,261 @@
+//
+// Buttons
+// --------------------------------------------------
+@import './variables.less';
+@import './mixins/opacity.less';
+@import './mixins/button.less';
+
+
+.btn,
+.button {
+  display         : inline-block;
+  margin-bottom   : 0; // For input.btn
+  font-weight     : 400;
+  text-align      : center;
+  vertical-align  : middle;
+  touch-action    : manipulation;
+  cursor          : pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border          : 1px solid transparent;
+  white-space     : nowrap;
+  user-select     : none;
+  padding         : .375rem .75rem;
+  font-size       : 1rem;
+  line-height     : 1.5;
+  border-radius   : .25rem;
+  transition      : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &,
+  &:active,
+  &.active {
+
+    &:focus,
+    &.focus {
+      outline       : .5rem auto -webkit-focus-ring-color;
+      outline-offset: -.1rem;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color          : @color-theme;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline         : 0;
+    background-image: none;
+    box-shadow      : inset 0 .3rem .5rem rgba(0, 0, 0, .125);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    .opacity(.65);
+    box-shadow: none;
+  }
+
+  a& {
+
+    &.disabled,
+    fieldset[disabled] & {
+      pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+    }
+  }
+}
+
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.button-link {
+  color        : @color-theme;
+  font-weight  : normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    box-shadow      : none;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus {
+    color           : @color-theme;
+    text-decoration : underline;
+    background-color: transparent;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+
+    &:hover,
+    &:focus {
+      color          : @color-grey;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Color
+//
+.button {
+  &-red {
+    .button-variant(@color-white, @color-red, darken(@color-red, 5%));
+  }
+
+  &-orange {
+    .button-variant(@color-white, @color-orange, darken(@color-orange, 5%));
+  }
+
+  &-yellow {
+    .button-variant(@color-white, @color-yellow, darken(@color-yellow, 5%));
+  }
+
+  &-olive {
+    .button-variant(@color-white, @color-olive, darken(@color-olive, 5%));
+  }
+
+  &-green {
+    .button-variant(@color-white, @color-green, darken(@color-green, 5%));
+  }
+
+  &-cyan {
+    .button-variant(@color-white, @color-cyan, darken(@color-cyan, 5%));
+  }
+
+  &-blue {
+    .button-variant(@color-white, @color-blue, darken(@color-blue, 5%));
+  }
+
+  &-purple {
+    .button-variant(@color-white, @color-purple, darken(@color-purple, 5%));
+  }
+
+  &-mauve {
+    .button-variant(@color-white, @color-mauve, darken(@color-mauve, 5%));
+  }
+
+  &-pink {
+    .button-variant(@color-white, @color-pink, darken(@color-pink, 5%));
+  }
+
+  &-brown {
+    .button-variant(@color-white, @color-brown, darken(@color-brown, 5%));
+  }
+
+  &-grey {
+    .button-variant(@color-black, @color-grey, darken(@color-grey, 5%));
+  }
+
+  &-gray {
+    .button-variant(@color-black, @color-gray, darken(@color-gray, 5%));
+  }
+
+  &-silver {
+    .button-variant(@color-white, @color-silver, darken(@color-silver, 5%));
+  }
+
+  &-black {
+    .button-variant(@color-white, @color-black, lighten(@color-black, 5%));
+  }
+
+  &-dark {
+    .button-variant(@color-white, @color-dark, lighten(@color-dark, 5%));
+  }
+
+  &-white {
+    .button-variant(@color-black, @color-white, darken(@color-white, 5%));
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-xl,
+.button-xl,
+.btns.btns-xl>.btn,
+.btn-xl>.button,
+.button-xl>.btn,
+.button-xl>.button {
+  .button-resize(.625rem 1.25rem; 1.5rem; 1.5; .3rem; )
+}
+
+.btn-lg,
+.button-lg,
+.btn-lg>.btn,
+.btn-lg>.button,
+.button-lg>.btn,
+.button-lg>.button {
+  .button-resize(.5rem 1rem; 1.25rem; 1.5; .3rem);
+}
+
+.btn-md,
+.button-md,
+.btn-md>.btn,
+.btn-md>.button,
+.button-md>.btn,
+.button-md>.button {
+  .button-resize(.375rem .75rem; 1rem; 1.5; .2rem);
+}
+
+.btn-sm,
+.button-sm,
+.btn-sm>.btn,
+.btn-sm>.button,
+.button-sm>.btn,
+.button-sm>.button {
+  .button-resize(.25rem .5rem; .75rem; 1.5; .2rem);
+}
+
+.btn-xs,
+.button-xs,
+.btn-xs>.btn,
+.btn-xs>.button,
+.button-xs>.btn,
+.button-xs>.button {
+  .button-resize(.125rem .25rem; .5rem; 1.5; .1rem);
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block,
+.button-block {
+  display: block;
+  width  : 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block+.btn-block,
+.button-block+.button-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+
+  &.btn-block,
+  &.button-block {
+    width: 100%;
+  }
+}

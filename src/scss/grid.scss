@@ -1,0 +1,45 @@
+/**
+ * == Grid ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/grid.scss: grid-make(),
+// }
+@import "./mixins/grid";
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+.container {
+    @include grid-init-container();
+    width: 90%;
+}
+
+.container-fluid {
+    @include grid-init-container();
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+.row {
+    @include grid-init-row();
+    margin-left: ceil(($grid-gutter-width / -2));
+    margin-right: floor(($grid-gutter-width / -2));
+}
+
+.row-condensed {
+    @include grid-init-row();
+    margin-right: 0;
+    margin-left: 0;
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+// Extra small grid
+@include grid-make-columns();
+// Small grid
+// Medium grid
+// Large grid
+// Extra large grid

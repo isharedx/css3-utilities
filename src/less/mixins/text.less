@@ -1,0 +1,159 @@
+.text-reset() {
+    font-family: @font-family-base;
+    // We deliberately do NOT reset font-size.
+    font-style     : normal;
+    font-weight    : normal;
+    letter-spacing : normal;
+    line-break     : auto;
+    line-height    : @line-height-base;
+    text-align     : left; // Fallback for where `start` is not supported
+    text-align     : start;
+    text-decoration: none;
+    text-shadow    : none;
+    text-transform : none;
+    white-space    : normal;
+    word-break     : normal;
+    word-spacing   : normal;
+    word-wrap      : normal;
+}
+
+.text-variant(@color) {
+    color: @color;
+
+    a&:hover,
+    a&:focus {
+        color: darken(@color, 10%);
+    }
+}
+
+.text-make-color() {
+    &-red {
+        .text-variant(@color-red);
+    }
+
+    &-orange {
+        .text-variant(@color-orange);
+    }
+
+    &-yellow {
+        .text-variant(@color-yellow);
+    }
+
+    &-olive {
+        .text-variant(@color-olive);
+    }
+
+    &-green {
+        .text-variant(@color-green);
+    }
+
+    &-cyan {
+        .text-variant(@color-cyan);
+    }
+
+    &-blue {
+        .text-variant(@color-blue);
+    }
+
+    &-purple {
+        .text-variant(@color-purple);
+    }
+
+    &-mauve {
+        .text-variant(@color-mauve);
+    }
+
+    &-pink {
+        .text-variant(@color-pink);
+    }
+
+    &-brown {
+        .text-variant(@color-brown);
+    }
+
+    &-grey {
+        .text-variant(@color-grey);
+    }
+
+    &-gray {
+        .text-variant(@color-gray);
+    }
+
+    &-silver {
+        .text-variant(@color-silver);
+    }
+
+    &-black {
+        .text-variant(@color-black);
+    }
+
+    &-white {
+        .text-variant(@color-white);
+    }
+}
+
+.text-make-shadow() {
+
+    text-shadow: @shadow-size lighten(@color-theme, 10%);
+
+    &-red {
+        text-shadow: @shadow-size lighten(@color-red, 10%) !important;
+    }
+
+    &-orange {
+        text-shadow: @shadow-size lighten(@color-orange, 10%) !important;
+    }
+
+    &-yellow {
+        text-shadow: @shadow-size lighten(@color-yellow, 10%) !important;
+    }
+
+    &-olive {
+        text-shadow: @shadow-size lighten(@color-olive, 10%) !important;
+    }
+
+    &-green {
+        text-shadow: @shadow-size lighten(@color-green, 10%) !important;
+    }
+
+    &-cyan {
+        text-shadow: @shadow-size lighten(@color-cyan, 10%) !important;
+    }
+
+    &-blue {
+        text-shadow: @shadow-size lighten(@color-blue, 10%) !important;
+    }
+
+    &-purple {
+        text-shadow: @shadow-size lighten(@color-purple, 10%) !important;
+    }
+
+    &-mauve {
+        text-shadow: @shadow-size lighten(@color-mauve, 10%) !important;
+    }
+
+    &-pink {
+        text-shadow: @shadow-size lighten(@color-pink, 10%) !important;
+    }
+
+    &-brown {
+        text-shadow: @shadow-size lighten(@color-brown, 10%) !important;
+    }
+
+    &-grey {
+        text-shadow: @shadow-size lighten(@color-grey, 10%) !important;
+    }
+
+    &-gray {
+        text-shadow: @shadow-size lighten(@color-gray, 10%) !important;
+    }
+
+    &-black {
+        text-shadow: @shadow-size lighten(@color-black, 10%) !important;
+    }
+
+    &-white {
+        text-shadow: @shadow-size lighten(@color-white, 10%) !important;
+    }
+
+}

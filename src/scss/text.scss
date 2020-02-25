@@ -1,0 +1,114 @@
+/**
+ * == Text ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/variables.scss: $font-size-primary,$line-height-primary,$colors
+// }
+.txt,
+.text {
+    // reset
+    // We deliberately do NOT reset font-size.
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    text-align: left; // Fallback for where `start` is not supported
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    font-size: $font-size-primary;
+    font-weight: 400;
+    line-height: $line-height-primary;
+    white-space: pre-wrap;
+    overflow: auto;
+    vertical-align: baseline;
+    // white space
+    &-nowrap {
+        white-space: nowrap;
+    }
+    // overflow
+    &-truncate {
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    // image replacement
+    &-hide {
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+    }
+    // prefix with currency letter
+    &-RMB::before {
+        content: "¥";
+        font-size: 80%;
+        margin-right: 2px;
+    }
+    &-dollar::before {
+        content: "$";
+        font-size: 80%;
+        margin-right: 2px;
+    }
+    // text-align
+    &-justify {
+        text-align: justify;
+    }
+    &-left {
+        text-align: left;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-center {
+        text-align: center;
+    }
+    // text-transform 
+    &-abc,
+    &-lowercase {
+        text-transform: lowercase;
+    }
+    &-ABC,
+    &-uppercase {
+        text-transform: uppercase;
+    }
+    &-Abc,
+    &-capitalize {
+        text-transform: capitalize;
+    }
+    // font-weight 
+    &-light {
+        font-weight: 300;
+    }
+    &-bold {
+        font-weight: 700;
+    }
+    // color
+    @include text(); // $color-black
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            @include text($color);
+        }
+    }
+    // text-shadow
+    &-sha,
+    &-shadow {
+        @include text-shadow(); // $color-theme
+        @each $key,
+        $color in $colors {
+            &-#{$key} {
+                @include text-shadow($color);
+            }
+        }
+    }
+}

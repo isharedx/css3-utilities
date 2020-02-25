@@ -1,0 +1,265 @@
+/* 阴影尺寸 */
+/*
+---- text---
+*/
+.text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: pre-wrap;
+  overflow: auto;
+  vertical-align: baseline;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.text-truncate {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 图像替换 */
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+/* 货币 */
+.text-RMB::before {
+  content: "¥";
+  font-size: 80%;
+  margin-right: 2px;
+}
+.text-dollar::before {
+  content: "$";
+  font-size: 80%;
+  margin-right: 2px;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+/* text-transform */
+.text-abc,
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-ABC,
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-Abc,
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+/* font-weight */
+.text-light {
+  font-weight: 300 !important;
+}
+.text-bold {
+  font-weight: 700 !important;
+}
+/* color */
+.text-red {
+  color: #e54d42;
+}
+a.text-red:hover,
+a.text-red:focus {
+  color: #d62a1e;
+}
+.text-orange {
+  color: #f37b1d;
+}
+a.text-orange:hover,
+a.text-orange:focus {
+  color: #d2620b;
+}
+.text-yellow {
+  color: #fbbd08;
+}
+a.text-yellow:hover,
+a.text-yellow:focus {
+  color: #cd9903;
+}
+.text-olive {
+  color: #8dc63f;
+}
+a.text-olive:hover,
+a.text-olive:focus {
+  color: #72a230;
+}
+.text-green {
+  color: #39b54a;
+}
+a.text-green:hover,
+a.text-green:focus {
+  color: #2d8e3a;
+}
+.text-cyan {
+  color: #1cbbb4;
+}
+a.text-cyan:hover,
+a.text-cyan:focus {
+  color: #158f89;
+}
+.text-blue {
+  color: #0081ff;
+}
+a.text-blue:hover,
+a.text-blue:focus {
+  color: #0067cc;
+}
+.text-purple {
+  color: #6739b6;
+}
+a.text-purple:hover,
+a.text-purple:focus {
+  color: #512d8f;
+}
+.text-mauve {
+  color: #9c26b0;
+}
+a.text-mauve:hover,
+a.text-mauve:focus {
+  color: #771d86;
+}
+.text-pink {
+  color: #e03997;
+}
+a.text-pink:hover,
+a.text-pink:focus {
+  color: #c71f7e;
+}
+.text-brown {
+  color: #a5673f;
+}
+a.text-brown:hover,
+a.text-brown:focus {
+  color: #805031;
+}
+.text-grey {
+  color: #eee;
+}
+a.text-grey:hover,
+a.text-grey:focus {
+  color: #d5d5d5;
+}
+.text-gray {
+  color: #999;
+}
+a.text-gray:hover,
+a.text-gray:focus {
+  color: #808080;
+}
+.text-silver {
+  color: #555;
+}
+a.text-silver:hover,
+a.text-silver:focus {
+  color: #3b3b3b;
+}
+.text-black {
+  color: #333;
+}
+a.text-black:hover,
+a.text-black:focus {
+  color: #1a1a1a;
+}
+.text-white {
+  color: #fff;
+}
+a.text-white:hover,
+a.text-white:focus {
+  color: #e6e6e6;
+}
+/* text-shadow */
+.text-sha,
+.text-shadow {
+  text-shadow: 0 0.1rem 0.2rem 0 #75cda5;
+}
+.text-sha-red,
+.text-shadow-red {
+  text-shadow: 0 0.1rem 0.2rem 0 #eb776f !important;
+}
+.text-sha-orange,
+.text-shadow-orange {
+  text-shadow: 0 0.1rem 0.2rem 0 #f6974d !important;
+}
+.text-sha-yellow,
+.text-shadow-yellow {
+  text-shadow: 0 0.1rem 0.2rem 0 #fcca3a !important;
+}
+.text-sha-olive,
+.text-shadow-olive {
+  text-shadow: 0 0.1rem 0.2rem 0 #a4d266 !important;
+}
+.text-sha-green,
+.text-shadow-green {
+  text-shadow: 0 0.1rem 0.2rem 0 #57ca67 !important;
+}
+.text-sha-cyan,
+.text-shadow-cyan {
+  text-shadow: 0 0.1rem 0.2rem 0 #2bdfd7 !important;
+}
+.text-sha-blue,
+.text-shadow-blue {
+  text-shadow: 0 0.1rem 0.2rem 0 #339aff !important;
+}
+.text-sha-purple,
+.text-shadow-purple {
+  text-shadow: 0 0.1rem 0.2rem 0 #8257cb !important;
+}
+.text-sha-mauve,
+.text-shadow-mauve {
+  text-shadow: 0 0.1rem 0.2rem 0 #bd36d3 !important;
+}
+.text-sha-pink,
+.text-shadow-pink {
+  text-shadow: 0 0.1rem 0.2rem 0 #e765ae !important;
+}
+.text-sha-brown,
+.text-shadow-brown {
+  text-shadow: 0 0.1rem 0.2rem 0 #bf8058 !important;
+}
+.text-sha-grey,
+.text-shadow-grey {
+  text-shadow: 0 0.1rem 0.2rem 0 #ffffff !important;
+}
+.text-sha-gray,
+.text-shadow-gray {
+  text-shadow: 0 0.1rem 0.2rem 0 #b3b3b3 !important;
+}
+.text-sha-black,
+.text-shadow-black {
+  text-shadow: 0 0.1rem 0.2rem 0 #4d4d4d !important;
+}
+.text-sha-white,
+.text-shadow-white {
+  text-shadow: 0 0.1rem 0.2rem 0 #ffffff !important;
+}

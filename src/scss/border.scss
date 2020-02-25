@@ -1,0 +1,15 @@
+/**
+ * == Border ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/spacing.scss: border-make-size(),border-make-color(),border-make-style(),
+// }
+@import './mixins/border';
+.b,
+.border {
+    @include border-make-size();
+    @include border-make-color();
+    @include border-make-style();
+}

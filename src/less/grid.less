@@ -1,0 +1,64 @@
+//
+// Grid system
+// --------------------------------------------------
+@import "variables.less";
+@import "mixins/grid.less";
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+.container {
+  .grid-init-container();
+
+  @media (min-width: @breakpoint-sm) {
+    width: 90%;
+  }
+}
+
+.container-fluid {
+  .grid-init-container();
+}
+// Row
+//
+// Rows contain and clear the floats of your columns.
+.row {
+  .grid-init-row();
+
+  margin-left : ceil((@grid-gutter-width / -2));
+  margin-right: floor((@grid-gutter-width / -2));
+}
+
+.row-condensed {
+  .grid-init-row();
+  
+  margin-right: 0;
+  margin-left : 0;
+}
+
+
+// Columns
+//
+// Common styles for small and large grid columns
+// Extra small grid
+.grid-make-columns(~"");
+.grid-make-columns(~"xs-");
+
+// Small grid
+@media (min-width: @breakpoint-sm) {
+  .grid-make-columns(~"sm-");
+}
+
+// Medium grid
+@media (min-width: @breakpoint-md) {
+  .grid-make-columns(~"md-");
+}
+
+// Large grid
+@media (min-width: @breakpoint-lg) {
+  .grid-make-columns(~"lg-");
+}
+
+// Extra large grid
+@media (min-width: @breakpoint-xl) {
+  .grid-make-columns(~"xl-");
+}

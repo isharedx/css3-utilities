@@ -1,0 +1,187 @@
+//
+// Transition
+// 
+// Dependences: {
+//      ../variables.scss: $enable-transitions,$transition-base,
+// }
+@mixin transition($transition...) {
+    @if $enable-transitions {
+        @if length($transition)==0 {
+            transition: all .2s ease-in-out;
+        }
+        @else {
+            transition: $transition;
+        }
+    }
+}
+
+//
+// Background
+// 
+// Dependences: {
+//      ../functions.scss: contrast-color(),
+// }
+@mixin background($color, $flag:false) {
+    background-color: $color;
+    color: contrast-color($color);
+    @if $flag {
+        a#{&}:hover,
+        a#{&}:focus,
+        button#{&}:hover,
+        button#{&}:focus {
+            background-color: darken($color, 10%);
+            color: contrast-color($color);
+        }
+    }
+}
+
+//
+// Gradients
+// 
+// Dependences: {
+//      ../variables.scss: $enable-gradients,
+// }
+@mixin gradient($color) {
+    @if $enable-gradients {
+        background: $color linear-gradient(180deg, lighten($color, 15%), $color) repeat-x;
+    }
+    @else {
+        background-color: $color;
+    }
+    color: contrast-color($color);
+}
+
+// 
+// Shadow
+// 
+@mixin box-shadow($shadow...) {
+    @if $enable-shadows {
+        $result: ();
+        @if (length($shadow)==1) {
+            // We can pass `@include box-shadow(none);`
+            $result: $shadow;
+        }
+        @else {
+            // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+            @for $i from 1 through length($shadow) {
+                @if nth($shadow, $i) !="none" {
+                    $result: append($result, nth($shadow, $i), "comma");
+                }
+            }
+        }
+        @if (length($result) > 0) {
+            box-shadow: $result;
+        }
+    }
+}
+
+//
+// Opacity
+//
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter:"alpha(opacity=#{$opacity-ie})";
+}
+
+// 
+// Resize
+// 
+@mixin resize($direction) {
+    overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
+    resize: $direction; // Options: horizontal, vertical, both
+}
+
+//
+// Text
+// 
+// Dependences: {
+//      ../variables.scss: colors, $shadow-size,
+// }
+@mixin text($color:$color-black, $flag:false) {
+    color: $color;
+    @if $flag {
+        a#{&}:hover,
+        a#{&}:focus,
+        button#{&}:hover,
+        button#{&}:focus {
+            color: darken($color, 10%);
+        }
+    }
+}
+
+@mixin text-shadow($size:$shadow-size, $color:$color-theme) {
+    text-shadow: $size lighten($color, 10%);
+}
+
+// Emphasis
+@mixin hover {
+    &:hover {
+        @content;
+    }
+}
+
+@mixin focus {
+    &:focus {
+        @content;
+    }
+}
+
+@mixin active {
+    &:active {
+        @content;
+    }
+}
+
+@mixin hover-plain {
+    &,
+    &:hover {
+        @content;
+    }
+}
+
+@mixin focus-plain {
+    &,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin active-plain {
+    &,
+    &:active {
+        @content;
+    }
+}
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin hover-focus-plain {
+    &,
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin hover-focus-active {
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin hover-focus-active-plain {
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}

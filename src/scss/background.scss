@@ -1,0 +1,16 @@
+/**
+ * == Background ==
+ */
+
+//
+// Dependences: {
+// }
+.bg,
+.background {
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            @include background($color, true);
+        }
+    }
+}

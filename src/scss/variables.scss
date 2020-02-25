@@ -1,0 +1,158 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Color system
+//
+// abbreviations
+// 
+$abbreviations: ( width:w, height:h, margin:m, padding:p, border:b, radius:r, // box
+top:t, right:r, bottom:b, left:l, // direction
+"super small":xs, small:sm, middle:md, large:lg, "super large":xl, // size
+);
+//
+// Variables
+// --------------------------------------------------
+//
+// Size
+//
+$size-primary: 1rem;
+$size-no: ($size-primary * .00);
+$size-xs: ($size-primary * .10);
+$size-sm: ($size-primary * .30);
+$size-md: ($size-primary * .75);
+$size-lg: ($size-primary * 1.5);
+$size-xl: ($size-primary * 3.0);
+// Size Map
+$sizes:('primary':$size-primary, 'no':$size-no, 'xs':$size-xs, 'sm':$size-sm, 'md':$size-md, 'lg':$size-lg, 'xl':$size-xl, ) !default;
+//
+// Breakpoint
+//
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-primary: 0px;
+// Breakpoint Map
+$breakpoints: ('primary':$breakpoint-primary, 'xs':$breakpoint-xs, 'sm':$breakpoint-sm, 'md':$breakpoint-md, 'lg':$breakpoint-lg, 'xl':$breakpoint-xl) !default;
+// 
+// Direction
+// 
+$directions: ("primary":all, "t":top, "r":right, "b":bottom, "l":left);
+$sides: ("primary":all, "t":top, "r":right, "b":bottom, "l":left); // !notes: to replace the var $directions in next version.
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-mask: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+//
+// Color
+//
+$color-red: #e54d42; // 嫣红
+$color-orange: #f37b1d; // 桔橙
+$color-yellow: #fbbd08; // 明黄
+$color-olive: #8dc63f; // 橄榄
+$color-green: #39b54a; // 森绿
+$color-cyan: #1cbbb4; // 天青
+$color-blue: #007bff; // 天蓝
+$color-purple: #6739b6; // 姹紫
+$color-mauve: #9c26b0; // 木槿
+$color-pink: #e03997; // 桃粉
+$color-brown: #a5673f; // 棕褐
+$color-grey: #eee; // 玄灰 
+$color-gray: #aaa; // 草灰
+$color-silver: #777; // 银灰
+$color-black: #333; // 墨黑 
+$color-dark: #000; // 纯黑
+$color-white: #fff; // 雅白
+$color-theme: #4fc08d; // 主题色
+// Color Map
+$colors: ('red':$color-red, 'orange':$color-orange, 'yellow':$color-yellow, 'olive':$color-olive, 'green':$color-green, 'cyan':$color-cyan, 'blue':$color-blue, 'purple':$color-purple, 'mauve':$color-mauve, 'pink':$color-pink, 'brown':$color-brown, 'grey':$color-grey, 'gray':$color-gray, 'silver':$color-silver, 'black':$color-black, 'dark':$color-dark, 'white':$color-white, 'theme':$color-theme) !default;
+//
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+$font-family-primary: $font-family-sans-serif !default;
+// Font Size
+$font-size-primary: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-xl: $font-size-primary * 2.50 !default;
+$font-size-lg: $font-size-primary * 1.75 !default;
+$font-size-md: $font-size-primary * 1.50 !default;
+$font-size-sm: $font-size-primary * .875 !default;
+$font-size-xs: $font-size-primary * .750 !default;
+$font-size-h1: $font-size-primary * 2.50 !default;
+$font-size-h2: $font-size-primary * 2.00 !default;
+$font-size-h3: $font-size-primary * 1.75 !default;
+$font-size-h4: $font-size-primary * 1.25 !default;
+$font-size-h5: $font-size-primary * 1.00 !default;
+$font-size-h6: $font-size-primary * .875 !default;
+// Font Weight
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-primary: $font-weight-normal !default;
+// Line Height
+$line-height-primary: 1.5 !default;
+// 
+// Layout
+// 
+$displays: none,
+inline,
+inline-block,
+block,
+table,
+table-row,
+table-cell,
+flex,
+inline-flex !default;
+$overflows: auto,
+hidden !default;
+$positions: static,
+relative,
+absolute,
+fixed,
+sticky !default;
+//
+// Grid
+//
+// Grid columns
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+//
+// YIQ
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150 !default;
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-dark: $color-dark !default;
+$yiq-light: $color-white !default;
+//
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-gradients: true !default;
+$enable-transitions: true !default;
+$enable-pointer-cursor-for-buttons: true !default;

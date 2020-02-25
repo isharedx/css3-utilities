@@ -1,0 +1,99 @@
+/**
+ * == Tips ==
+ */
+
+//
+// Dependences: {
+// }
+.tips {
+    &,
+    &-top,
+    &-right,
+    &-bottom,
+    &-left {
+        position: relative;
+        text-align: center !important;
+        cursor: pointer;
+        z-index: $zindex-tooltip;
+    }
+    &:hover {
+        &::before {
+            content: attr(data-tips);
+            padding: .1rem .3rem;
+            border-radius: .25rem;
+            position: absolute;
+            display: block;
+            background: black;
+            text-align: center;
+            color: #fff;
+            font-size: .8rem;
+            line-height: 1.5;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+        }
+    }
+    &-top:hover {
+        &::before {
+            top: -.25rem;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+        &::after {
+            border-left: .25rem solid transparent;
+            border-top: .25rem solid #333;
+            border-right: .25rem solid transparent;
+            top: -.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &-right:hover {
+        &::before {
+            top: 50%;
+            right: -.25rem;
+            transform: translate(100%, -50%);
+        }
+        &::after {
+            border-top: .25rem solid transparent;
+            border-right: .25rem solid #333;
+            border-bottom: .25rem solid transparent;
+            top: 50%;
+            right: -.25rem;
+            transform: translateY(-50%);
+        }
+    }
+    &-bottom:hover {
+        &::before {
+            bottom: -.25rem;
+            left: 50%;
+            transform: translate(-50%, 100%);
+        }
+        &::after {
+            border-right: .25rem solid transparent;
+            border-bottom: .25rem solid #333;
+            border-left: .25rem solid transparent;
+            bottom: -.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &-left:hover {
+        &::before {
+            top: 50%;
+            left: -.25rem;
+            transform: translate(-100%, -50%);
+        }
+        &::after {
+            border-left: .25rem solid #333;
+            border-top: .25rem solid transparent;
+            border-bottom: .25rem solid transparent;
+            top: 50%;
+            left: -.25rem;
+            transform: translateY(-50%);
+        }
+    }
+}

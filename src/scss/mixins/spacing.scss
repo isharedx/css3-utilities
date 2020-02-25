@@ -1,0 +1,29 @@
+//
+// Background Mixins
+//
+// Dependences: {
+//      ./tools.scss: directions,sizes,
+// }
+@mixin spacing-make($parent) {
+    @each $dir-key,
+    $dir-val in $directions {
+        @each $size-key,
+        $size-val in $sizes {
+            $suffix: -#{$size-key};
+            @if $size-key==primary {
+                $suffix: "";
+            }
+            @if $dir-key==primary {
+                &#{$suffix} {
+                    #{$parent}: $size-val;
+                }
+            }
+            @else {
+                &-#{$dir-key}#{$suffix},
+                &-#{$dir-val}#{$suffix} {
+                    #{$parent}-#{$dir-val}: $size-val;
+                }
+            }
+        }
+    }
+}

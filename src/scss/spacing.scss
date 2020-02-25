@@ -1,0 +1,18 @@
+/**
+ * == Spacing ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/spacing.scss: spacing-make(),
+// }
+@import './mixins/spacing';
+.m,
+.margin {
+    @include spacing-make("margin");
+}
+
+.p,
+.padding {
+    @include spacing-make("padding");
+}

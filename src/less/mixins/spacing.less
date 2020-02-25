@@ -1,0 +1,162 @@
+/* margin */
+.margin-calc-size(@size-tag, @size, @type) when(@type=all) {
+    .margin@{size-tag} {
+        margin: calc(1rem * @size) !important;
+    }
+}
+
+.margin-calc-size(@size-tag, @size, @type) when(@type=top) {
+
+    .margin-y@{size-tag},
+    .margin-t@{size-tag},
+    .margin-top@{size-tag} {
+        margin-top: calc(1rem * @size) !important;
+    }
+}
+
+.margin-calc-size(@size-tag, @size, @type) when(@type=right) {
+
+    .margin-x@{size-tag},
+    .margin-r@{size-tag},
+    .margin-right@{size-tag} {
+        margin-right: calc(1rem * @size) !important;
+    }
+}
+
+.margin-calc-size(@size-tag, @size, @type) when(@type=bottom) {
+
+    .margin-y@{size-tag},
+    .margin-b@{size-tag},
+    .margin-bottom@{size-tag} {
+        margin-bottom: calc(1rem * @size) !important;
+    }
+}
+
+.margin-calc-size(@size-tag, @size, @type) when(@type=left) {
+
+    .margin-x@{size-tag},
+    .margin-l@{size-tag},
+    .margin-left@{size-tag} {
+        margin-left: calc(1rem * @size) !important;
+    }
+}
+
+/* padding */
+.padding-calc-size(@size-tag, @size, @type) when(@type=all) {
+
+    .padding@{size-tag} {
+        padding: calc(1rem * @size) !important;
+    }
+}
+
+.padding-calc-size(@size-tag, @size, @type) when(@type=top) {
+
+    .padding-y@{size-tag},
+    .padding-t@{size-tag},
+    .padding-top@{size-tag} {
+        padding-top: calc(1rem * @size) !important;
+    }
+}
+
+.padding-calc-size(@size-tag, @size, @type) when(@type=right) {
+
+    .padding-x@{size-tag},
+    .padding-r@{size-tag},
+    .padding-right@{size-tag} {
+        padding-right: calc(1rem * @size) !important;
+    }
+}
+
+.padding-calc-size(@size-tag, @size, @type) when(@type=bottom) {
+
+    .padding-y@{size-tag},
+    .padding-b@{size-tag},
+    .padding-bottom@{size-tag} {
+        padding-bottom: calc(1rem * @size) !important;
+    }
+}
+
+.padding-calc-size(@size-tag, @size, @type) when(@type=left) {
+
+    .padding-x@{size-tag},
+    .padding-l@{size-tag},
+    .padding-left@{size-tag} {
+        padding-left: calc(1rem * @size) !important;
+    }
+}
+
+.spacing-make-margins() {
+    .margin-calc-size(~""; @size; all);
+    .margin-calc-size(~"-no"; @size-no; all);
+    .margin-calc-size(~"-xs"; @size-xs; all);
+    .margin-calc-size(~"-sm"; @size-sm; all);
+    .margin-calc-size(~"-md"; @size-md; all);
+    .margin-calc-size(~"-lg"; @size-lg; all);
+    .margin-calc-size(~"-xl"; @size-xl; all);
+    .margin-calc-size(~""; @size; top);
+    .margin-calc-size(~"-no"; @size-no; top);
+    .margin-calc-size(~"-xs"; @size-xs; top);
+    .margin-calc-size(~"-sm"; @size-sm; top);
+    .margin-calc-size(~"-md"; @size-md; top);
+    .margin-calc-size(~"-lg"; @size-lg; top);
+    .margin-calc-size(~"-xl"; @size-xl; top);
+    .margin-calc-size(~""; @size; right);
+    .margin-calc-size(~"-no"; @size-no; right);
+    .margin-calc-size(~"-xs"; @size-xs; right);
+    .margin-calc-size(~"-sm"; @size-sm; right);
+    .margin-calc-size(~"-md"; @size-md; right);
+    .margin-calc-size(~"-lg"; @size-lg; right);
+    .margin-calc-size(~"-xl"; @size-xl; right);
+    .margin-calc-size(~""; @size; bottom);
+    .margin-calc-size(~"-no"; @size-no; bottom);
+    .margin-calc-size(~"-xs"; @size-xs; bottom);
+    .margin-calc-size(~"-sm"; @size-sm; bottom);
+    .margin-calc-size(~"-md"; @size-md; bottom);
+    .margin-calc-size(~"-lg"; @size-lg; bottom);
+    .margin-calc-size(~"-xl"; @size-xl; bottom);
+    .margin-calc-size(~""; @size; left);
+    .margin-calc-size(~"-no"; @size-no; left);
+    .margin-calc-size(~"-xs"; @size-xs; left);
+    .margin-calc-size(~"-sm"; @size-sm; left);
+    .margin-calc-size(~"-md"; @size-md; left);
+    .margin-calc-size(~"-lg"; @size-lg; left);
+    .margin-calc-size(~"-xl"; @size-xl; left);
+}
+
+.spacing-make-paddings() {
+    .padding-calc-size(~""; @size; all);
+    .padding-calc-size(~"-no"; @size-no; all);
+    .padding-calc-size(~"-xs"; @size-xs; all);
+    .padding-calc-size(~"-sm"; @size-sm; all);
+    .padding-calc-size(~"-md"; @size-md; all);
+    .padding-calc-size(~"-lg"; @size-lg; all);
+    .padding-calc-size(~"-xl"; @size-xl; all);
+    .padding-calc-size(~""; @size; top);
+    .padding-calc-size(~"-no"; @size-no; top);
+    .padding-calc-size(~"-xs"; @size-xs; top);
+    .padding-calc-size(~"-sm"; @size-sm; top);
+    .padding-calc-size(~"-md"; @size-md; top);
+    .padding-calc-size(~"-lg"; @size-lg; top);
+    .padding-calc-size(~"-xl"; @size-xl; top);
+    .padding-calc-size(~""; @size; right);
+    .padding-calc-size(~"-no"; @size-no; right);
+    .padding-calc-size(~"-xs"; @size-xs; right);
+    .padding-calc-size(~"-sm"; @size-sm; right);
+    .padding-calc-size(~"-md"; @size-md; right);
+    .padding-calc-size(~"-lg"; @size-lg; right);
+    .padding-calc-size(~"-xl"; @size-xl; right);
+    .padding-calc-size(~""; @size; bottom);
+    .padding-calc-size(~"-no"; @size-no; bottom);
+    .padding-calc-size(~"-xs"; @size-xs; bottom);
+    .padding-calc-size(~"-sm"; @size-sm; bottom);
+    .padding-calc-size(~"-md"; @size-md; bottom);
+    .padding-calc-size(~"-lg"; @size-lg; bottom);
+    .padding-calc-size(~"-xl"; @size-xl; bottom);
+    .padding-calc-size(~""; @size; left);
+    .padding-calc-size(~"-no"; @size-no; left);
+    .padding-calc-size(~"-xs"; @size-xs; left);
+    .padding-calc-size(~"-sm"; @size-sm; left);
+    .padding-calc-size(~"-md"; @size-md; left);
+    .padding-calc-size(~"-lg"; @size-lg; left);
+    .padding-calc-size(~"-xl"; @size-xl; left);
+}

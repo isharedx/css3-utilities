@@ -1,0 +1,128 @@
+
+/*
+--- Image Overlay
+*/
+.aui.overlay {
+    position: relative;
+}
+
+.aui.overlay > .aui.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Fade */
+.aui.overlay > .aui.fade-in {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.aui.overlay > .aui.fade-out {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.aui.overlay:hover > .aui.fade-in {
+    opacity: 1;
+}
+
+.aui.overlay:hover > .aui.fade-out {
+    opacity: 0;
+}
+
+/* Slide */
+.aui.overlay > .aui.slide-top,
+.aui.overlay > .aui.slide-right,
+.aui.overlay > .aui.slide-bottom,
+.aui.overlay > .aui.slide-left {
+    position: absolute;
+    background-color: #008CBA;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.aui.overlay > .aui.slide-top,
+.aui.overlay > .aui.slide-bottom {
+    width: 100%;
+    height: 0;
+    left: 0;
+    right: 0;
+}
+
+.aui.overlay > .aui.slide-left,
+.aui.overlay > .aui.slide-right {
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+}
+
+.aui.overlay > .aui.slide-top {
+    bottom: 100%;
+}
+
+.aui.overlay > .aui.slide-right {
+    left: 100%;
+}
+
+.aui.overlay > .aui.slide-bottom {
+    bottom: 0;
+}
+
+.aui.overlay > .aui.slide-left {
+    left: 0;
+}
+
+.aui.overlay:hover > .aui.slide-top,
+.aui.overlay:hover > .aui.slide-bottom {
+    height: 100%;
+}
+
+.aui.overlay:hover > .aui.slide-left,
+.aui.overlay:hover > .aui.slide-right {
+    width: 100%;
+}
+
+.aui.overlay:hover > .aui.slide-top {
+    bottom: 0;
+}
+
+.aui.overlay:hover > .aui.slide-right {
+    left: 0;
+}
+
+/* Zoom */
+.aui.overlay > .aui.zoom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .3s ease;
+}
+
+.aui.overlay:hover > .aui.zoom {
+    transform: scale(1);
+}
+

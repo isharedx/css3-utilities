@@ -1,0 +1,156 @@
+
+/*
+--- Aui Close 图标 ---
+*/
+.aui.close {
+    position: relative;
+    float: right;
+    width: 1rem;
+    height: 1rem;
+    padding: 1rem;
+    opacity: .5;
+    border: 0;
+    background-color: transparent;
+}
+
+.aui.close::before,
+.aui.close::after {
+    content: "";
+    height: 1rem;
+    width: .1rem;
+    position: absolute;
+    top: 25%;
+    background-color: rgb(0, 0, 0);
+}
+
+.aui.close::before {
+    transform: rotate(45deg);
+}
+
+.aui.close::after {
+    transform: rotate(-45deg);
+}
+
+.aui.close:hover,
+.aui.close:focus {
+    color: #000;
+    text-decoration: none;
+    opacity: 1;
+
+}
+
+.aui.close:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+
+/*
+--- Modal 模态对话框 ---
+*/
+.aui.modal {
+    z-index: -1;
+    background-color: transparent;
+}
+
+.aui.modal.open {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.aui.modal.fade .aui.dialog {
+    top: 2rem;
+    /*transition: transform .3s ease-out, -webkit-transform .3s ease-out;*/
+    transition: top .3s ease-out;
+    transform: translate(-50%, -1rem);
+}
+
+.aui.modal.show .aui.dialog {
+    transform: translate(0, 0);
+}
+
+.aui.mask {
+    outline: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: block;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.aui.dialog {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.aui.dialog .aui.dialog__hd {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+
+.aui.dialog .aui.dialog__bd {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.aui.dialog .aui.dialog__ft {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+
+.aui.dialog .aui.dialog__ft :not(:first-child) {
+    margin-left: .25rem;
+}
+
+.aui.dialog .aui.dialog__ft :not(:last-child) {
+    margin-right: .25rem;
+}
+
+/*(min-width: var(--breakpoint-sm)) or*/
+@media (min-width: 576px) {
+    .aui.dialog.dialog-xs {
+        max-width: 300px;
+    }
+
+    .aui.dialog.dialog-sm {
+        max-width: 500px;
+    }
+
+    .aui.dialog.dialog-md {
+        max-width: 640px;
+    }
+
+    .aui.dialog.dialog-lg {
+        max-width: 800px;
+    }
+
+    .aui.dialog.dialog-xl {
+        max-width: 1000px;
+    }
+}
+

@@ -1,0 +1,73 @@
+/*
+ --- Animation 微动画 ---
+ */
+
+.animation-init() {
+
+    &-reverse,
+    &-fade-in,
+    &-fade-out,
+    &-scale-up,
+    &-scale-down,
+    &-slide-top,
+    &-slide-bottom,
+    &-slide-left,
+    &-slide-right,
+    &-shake,
+    &-spin {
+        animation-duration       : @animation-duration;
+        animation-timing-function: ease-out;
+        animation-fill-mode      : both;
+    }
+}
+
+.animation-make() {
+
+    &-reverse {
+        animation-direction: reverse;
+    }
+
+    &-fade-in {
+        animation-name           : fade-in;
+        animation-timing-function: linear;
+    }
+
+    &-fade-out {
+        animation-name           : fade-out;
+        animation-timing-function: linear;
+    }
+
+    &-scale-up {
+        animation-name: scale-up;
+    }
+
+    &-scale-down {
+        animation-name: scale-down;
+    }
+
+    &-slide-top {
+        animation-name: slide-top;
+    }
+
+    &-slide-bottom {
+        animation-name: slide-bottom;
+    }
+
+    &-slide-left {
+        animation-name: slide-left;
+    }
+
+    &-slide-right {
+        animation-name: slide-right;
+    }
+
+    &-shake {
+        animation-name: shake;
+    }
+
+    &-spin {
+        animation: spin @animation-duration infinite linear;
+        display  : inline-block;
+    }
+
+}

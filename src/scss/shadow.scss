@@ -1,0 +1,60 @@
+/**
+ * == Shadow ==
+ */
+
+//
+// Dependences: {
+// }
+$shadow-size: 0 .1rem .2rem 0;
+.sha,
+.shadow {
+    box-shadow: $shadow-size $color-theme;
+    // shadow warp 
+    &-warp {
+        position: relative;
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            top: .5rem;
+            bottom: .75rem;
+            left: .5rem;
+            width: 50%;
+            box-shadow: 0 .75rem .5rem rgba(0, 0, 0, .2);
+            transform: rotate(-3deg);
+            z-index: -1;
+        }
+        &:after {
+            right: .5rem;
+            left: auto;
+            transform: rotate(3deg);
+        }
+    }
+    // shadow blur
+    &-blur {
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            background: inherit;
+            -webkit-filter: blur(.25rem);
+            filter: blur(.25rem);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: .25rem;
+            left: .25rem;
+            z-index: -1;
+            opacity: .4;
+            transform-origin: 0 0;
+            border-radius: inherit;
+            transform: scale(1, 1);
+        }
+    }
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            box-shadow: $shadow-size $color;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+// 
+// Border Mixins
+//
+// Dependences: {
+//     ./maxins/variables.scss: sizes, directions, colors,
+// }
+@mixin border-make-size() {
+    @each $dir-key,
+    $dir-val in $directions {
+        @each $size-key,
+        $size-val in $sizes {
+            $suffix: -#{$size-key};
+            @if $size-key=="primary" {
+                $suffix: "";
+                $size-val: 1px;
+            }
+            @if $dir-key=="primary" {
+                &#{$suffix} {
+                    border: $size-val solid $color-gray;
+                }
+            }
+            @else {
+                &-#{$dir-key}#{$suffix},
+                &-#{$dir-val}#{$suffix} {
+                    border-#{$dir-val}: $size-val solid $color-gray;
+                }
+            }
+        }
+    }
+}
+
+@mixin border-make-color {
+    @each $key,
+    $color in $colors {
+        &-#{$key} {
+            border-color: $color;
+        }
+    }
+}
+
+@mixin border-make-style {
+    &-solid {
+        border-style: solid;
+    }
+    &-dashed {
+        border-style: dashed;
+    }
+}

@@ -1,0 +1,73 @@
+/* 阴影尺寸 */
+.hover:hover {
+  background-color: #4fc08d !important;
+  color: #fff !important;
+}
+.hover-red:hover {
+  background-color: #e54d42 !important;
+  color: #fff !important;
+}
+.hover-orange:hover {
+  background-color: #f37b1d !important;
+  color: #fff !important;
+}
+.hover-yellow:hover {
+  background-color: #fbbd08 !important;
+  color: #fff !important;
+}
+.hover-olive:hover {
+  background-color: #8dc63f !important;
+  color: #fff !important;
+}
+.hover-green:hover {
+  background-color: #39b54a !important;
+  color: #fff !important;
+}
+.hover-cyan:hover {
+  background-color: #1cbbb4 !important;
+  color: #fff !important;
+}
+.hover-blue:hover {
+  background-color: #0081ff !important;
+  color: #fff !important;
+}
+.hover-purple:hover {
+  background-color: #6739b6 !important;
+  color: #fff !important;
+}
+.hover-mauve:hover {
+  background-color: #9c26b0 !important;
+  color: #fff !important;
+}
+.hover-pink:hover {
+  background-color: #e03997 !important;
+  color: #fff !important;
+}
+.hover-brown:hover {
+  background-color: #a5673f !important;
+  color: #fff !important;
+}
+.hover-grey:hover {
+  background-color: #eee !important;
+  color: #333 !important;
+}
+.hover-gray:hover {
+  background-color: #999 !important;
+  color: #333 !important;
+}
+.hover-silver:hover {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+.hover-black:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+.hover-dark:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.hover-white:hover {
+  background-color: #fff !important;
+  color: #333 !important;
+}

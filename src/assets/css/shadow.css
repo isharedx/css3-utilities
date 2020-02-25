@@ -1,0 +1,101 @@
+/*
+--- 阴影 ---
+*/
+/* 阴影尺寸 */
+/* shadow color */
+.shadow {
+  box-shadow: 0 0.1rem 0.2rem 0 #4fc08d;
+  /* shadow warp */
+  /* shadow blur */
+}
+.shadow-warp {
+  position: relative;
+}
+.shadow-warp:before,
+.shadow-warp:after {
+  position: absolute;
+  content: "";
+  top: 0.5rem;
+  bottom: 0.75rem;
+  left: 0.5rem;
+  width: 50%;
+  box-shadow: 0 0.75rem 0.5rem rgba(0, 0, 0, 0.2);
+  transform: rotate(-3deg);
+  z-index: -1;
+}
+.shadow-warp:after {
+  right: 0.5rem;
+  left: auto;
+  transform: rotate(3deg);
+}
+.shadow-blur {
+  position: relative;
+}
+.shadow-blur:before {
+  content: "";
+  display: block;
+  background: inherit;
+  -webkit-filter: blur(0.25rem);
+  filter: blur(0.25rem);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0.25rem;
+  left: 0.25rem;
+  z-index: -1;
+  opacity: 0.4;
+  transform-origin: 0 0;
+  border-radius: inherit;
+  transform: scale(1, 1);
+}
+.shadow-red {
+  box-shadow: 0 0.1rem 0.2rem 0 #e54d42 !important;
+}
+.shadow-orange {
+  box-shadow: 0 0.1rem 0.2rem 0 #f37b1d !important;
+}
+.shadow-yellow {
+  box-shadow: 0 0.1rem 0.2rem 0 #fbbd08 !important;
+}
+.shadow-olive {
+  box-shadow: 0 0.1rem 0.2rem 0 #8dc63f !important;
+}
+.shadow-green {
+  box-shadow: 0 0.1rem 0.2rem 0 #39b54a !important;
+}
+.shadow-cyan {
+  box-shadow: 0 0.1rem 0.2rem 0 #1cbbb4 !important;
+}
+.shadow-blue {
+  box-shadow: 0 0.1rem 0.2rem 0 #0081ff !important;
+}
+.shadow-purple {
+  box-shadow: 0 0.1rem 0.2rem 0 #6739b6 !important;
+}
+.shadow-mauve {
+  box-shadow: 0 0.1rem 0.2rem 0 #9c26b0 !important;
+}
+.shadow-pink {
+  box-shadow: 0 0.1rem 0.2rem 0 #e03997 !important;
+}
+.shadow-brown {
+  box-shadow: 0 0.1rem 0.2rem 0 #a5673f !important;
+}
+.shadow-grey {
+  box-shadow: 0 0.1rem 0.2rem 0 #eee !important;
+}
+.shadow-gray {
+  box-shadow: 0 0.1rem 0.2rem 0 #999 !important;
+}
+.shadow-silver {
+  box-shadow: 0 0.1rem 0.2rem 0 #555 !important;
+}
+.shadow-black {
+  box-shadow: 0 0.1rem 0.2rem 0 #333 !important;
+}
+.shadow-dark {
+  box-shadow: 0 0.1rem 0.2rem 0 #000 !important;
+}
+.shadow-white {
+  box-shadow: 0 0.1rem 0.2rem 0 #fff !important;
+}

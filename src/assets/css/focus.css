@@ -1,0 +1,53 @@
+/* focus color */
+/* 阴影尺寸 */
+.focus:focus {
+  box-shadow: 0 0 0 0.2rem #4fc08d !important;
+}
+.focus-red:focus {
+  box-shadow: 0 0 0 0.2rem #e54d42 !important;
+}
+.focus-orange:focus {
+  box-shadow: 0 0 0 0.2rem #f37b1d !important;
+}
+.focus-yellow:focus {
+  box-shadow: 0 0 0 0.2rem #fbbd08 !important;
+}
+.focus-olive:focus {
+  box-shadow: 0 0 0 0.2rem #8dc63f !important;
+}
+.focus-green:focus {
+  box-shadow: 0 0 0 0.2rem #39b54a !important;
+}
+.focus-cyan:focus {
+  box-shadow: 0 0 0 0.2rem #1cbbb4 !important;
+}
+.focus-blue:focus {
+  box-shadow: 0 0 0 0.2rem #0081ff !important;
+}
+.focus-purple:focus {
+  box-shadow: 0 0 0 0.2rem #6739b6 !important;
+}
+.focus-mauve:focus {
+  box-shadow: 0 0 0 0.2rem #9c26b0 !important;
+}
+.focus-pink:focus {
+  box-shadow: 0 0 0 0.2rem #e03997 !important;
+}
+.focus-brown:focus {
+  box-shadow: 0 0 0 0.2rem #a5673f !important;
+}
+.focus-grey:focus {
+  box-shadow: 0 0 0 0.2rem #eee !important;
+}
+.focus-gray:focus {
+  box-shadow: 0 0 0 0.2rem #999 !important;
+}
+.focus-black:focus {
+  box-shadow: 0 0 0 0.2rem #333 !important;
+}
+.focus-dark:focus {
+  box-shadow: 0 0 0 0.2rem #000 !important;
+}
+.focus-white:focus {
+  box-shadow: 0 0 0 0.2rem #fff !important;
+}
