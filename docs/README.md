@@ -1,6 +1,8 @@
-# [CSS3 Utilities](https://cjiali.github.io/css3-utilities/)
+# CSS3 Utilities
 
 >  A few common CSS3 tool classes are encapsulated in this project.
+> 
+> [https://cjiali.github.io/css3-utilities/](https://cjiali.github.io/css3-utilities/)
 
 
 ## Layout
