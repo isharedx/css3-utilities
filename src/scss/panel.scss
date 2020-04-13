@@ -39,20 +39,15 @@
     &>#{&}-body,
     &>#{&}-foot {
         box-sizing: border-box;
+        position   : relative;
     }
 
     &>#{&}-head {
-        position   : relative;
-        margin-top : 0;
         top        : 0;
-        padding    : 0 $space-primary;
         flex-shrink: 0;
     }
 
     &>#{&}-body {
-        width     : 100%;
-        height    : auto;
-        position  : relative;
         z-index   : 0;
         flex      : 1;
         flex-basis: auto;
@@ -60,10 +55,7 @@
     }
 
     &>#{&}-foot {
-        position   : relative;
-        bottom     : 0px;
-        padding    : 0 $space-primary;
-        text-align : center;
+        bottom     : 0;
         flex-shrink: 0;
     }
 

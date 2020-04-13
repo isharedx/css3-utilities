@@ -13,30 +13,28 @@
     box-sizing: border-box;
     min-width: 0;
     margin: auto;
-    &-vertical {
+    &--vertical {
         flex-direction: column
+    }
+    >#{&}-aside,
+    >#{&}-head,
+    >#{&}-body,
+    >#{&}-foot{
+        box-sizing: border-box;
     }
     >#{&}-aside {
         overflow: auto;
-        box-sizing: border-box;
         flex-shrink: 0;
     }
     >#{&}-head {
-        padding: 0 $space-primary;
-        box-sizing: border-box;
         flex-shrink: 0;
     }
     >#{&}-body {
-        display: block;
         flex: 1;
         flex-basis: auto;
         overflow: auto;
-        box-sizing: border-box;
-        padding: $space-primary
     }
     >#{&}-foot {
-        padding: 0 $space-primary;
-        box-sizing: border-box;
         flex-shrink: 0;
     }
 }

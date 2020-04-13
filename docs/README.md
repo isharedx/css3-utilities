@@ -516,6 +516,8 @@ Where component is one of:<br/>
 - aside - for classes that set some style as the .container children element<br/>
 - blank - for classes that apply flex layout with flex-direction:column on the element
 
+In particular,  you can use .container--vertical to change the flex-direction value (default:row).
+
 
 ### panel
 

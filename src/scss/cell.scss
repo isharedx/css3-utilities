@@ -44,12 +44,14 @@
     &>#{&}-head,
     &>#{&}-body,
     &>#{&}-foot {
+        position   : relative;
         box-sizing: border-box;
     }
 
     &>#{&}-head {
+        position: relative;
+        left: 0;
         order       : 0;
-        justify-self: start;
         flex-shrink: 0;
     }
 
@@ -61,8 +63,8 @@
     }
 
     &>#{&}-foot {
+        right: 0;
         order       : 2;
-        justify-self: end;
         flex-shrink: 0;
     }
 

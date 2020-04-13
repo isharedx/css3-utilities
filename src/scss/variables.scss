@@ -6,9 +6,9 @@
 //
 // abbreviations
 // 
-$abbreviations: (width:w, height:h, margin:m, padding:p, border:b, radius:r, // box
-top :t, right:r, bottom:b, left:l, // direction
-"super small":xs, small:sm, middle:md, large:lg, "super large":xl, // size
+$abbreviations   : (width:w, height:h, margin:m, padding:p, border:b, radius:r, // box
+    top          :t, right:r, bottom:b, left:l, // direction
+    "super small":xs, small:sm, middle:md, large:lg, "super large":xl, // size
 );
 //
 // Variables
@@ -20,48 +20,48 @@ $ratios: (20:20%, 25:25%, 33:percentage(1/3), 40:40%, 50:50%, 60:60%, 66:percent
 //
 // Size
 // This variable affects the `.r-*` classes.
-$size-base: 1rem;
-$size-no: ($size-base * .00);
-$size-xs: ($size-base * .25);
-$size-sm: ($size-base * .50);
-$size-md: ($size-base * 1.0);
-$size-lg: ($size-base * 1.5);
-$size-xl: ($size-base * 3.0);
+$size-base   : 1rem;
+$size-no     : ($size-base * .00);
+$size-xs     : ($size-base * .25);
+$size-sm     : ($size-base * .50);
+$size-md     : ($size-base * 1.0);
+$size-lg     : ($size-base * 1.5);
+$size-xl     : ($size-base * 3.0);
 $size-primary: ($size-base * .75);
 // Size Map
 $sizes:('primary':$size-primary, 'no':$size-no, 'xs':$size-xs, 'sm':$size-sm, 'md':$size-md, 'lg':$size-lg, 'xl':$size-xl, ) !default;
 //
 // Size
 // This variable affects the `.b-*` classes.
-$solid-base: 10px;
-$solid-no: ($solid-base * .00);
-$solid-xs: ($solid-base * .10);
-$solid-sm: ($solid-base * .30);
-$solid-md: ($solid-base * .60);
-$solid-lg: ($solid-base * 1.0);
-$solid-xl: ($solid-base * 1.5);
+$solid-base   : 10px;
+$solid-no     : ($solid-base * .00);
+$solid-xs     : ($solid-base * .10);
+$solid-sm     : ($solid-base * .30);
+$solid-md     : ($solid-base * .60);
+$solid-lg     : ($solid-base * 1.0);
+$solid-xl     : ($solid-base * 1.5);
 $solid-primary: ($solid-base * .10);
-$solids:('primary':$solid-primary, 'no':$solid-no, 'xs':$solid-xs, 'sm':$solid-sm, 'md':$solid-md, 'lg':$solid-lg, 'xl':$solid-xl, ) !default;
+$solids       :('primary':$solid-primary, 'no':$solid-no, 'xs':$solid-xs, 'sm':$solid-sm, 'md':$solid-md, 'lg':$solid-lg, 'xl':$solid-xl, ) !default;
 // 
 // Space
 // This variable affects the `.m-*` and `.p-*` classes.
-$space-base: 1rem;
-$space-no: ($space-base * .00);
-$space-xs: ($space-base * .25);
-$space-sm: ($space-base * .50);
-$space-md: ($space-base * 1.0);
-$space-lg: ($space-base * 2.0);
-$space-xl: ($space-base * 3.0);
+$space-base   : 1rem;
+$space-no     : ($space-base * .00);
+$space-xs     : ($space-base * .25);
+$space-sm     : ($space-base * .50);
+$space-md     : ($space-base * 1.0);
+$space-lg     : ($space-base * 2.0);
+$space-xl     : ($space-base * 3.0);
 $space-primary: ($space-base * .75);
-$spaces :('primary':$space-primary, 'no':$space-no, 'xs':$space-xs, 'sm':$space-sm, 'md':$space-md, 'lg':$space-lg, 'xl':$space-xl, ) !default;
+$spaces       :('primary':$space-primary, 'no':$space-no, 'xs':$space-xs, 'sm':$space-sm, 'md':$space-md, 'lg':$space-lg, 'xl':$space-xl, ) !default;
 //
 // Breakpoint
 // This variable affects the `.xs-col-*`,`.sm-col-*`,`.md-col-*`,`.lg-col-*`,`.xl-col-*` classes.
-$breakpoint-xs: 0px;
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-xs     : 0px;
+$breakpoint-sm     : 576px;
+$breakpoint-md     : 768px;
+$breakpoint-lg     : 992px;
+$breakpoint-xl     : 1200px;
 $breakpoint-primary: 0px;
 // Breakpoint Map
 $breakpoints: ('primary':$breakpoint-primary, 'xs':$breakpoint-xs, 'sm':$breakpoint-sm, 'md':$breakpoint-md, 'lg':$breakpoint-lg, 'xl':$breakpoint-xl) !default;
@@ -74,34 +74,36 @@ $sides: ("primary":all, "x":"horizontal", "y":"vertical", "t":top, "r":right, "b
 // 
 // Z-Index
 // 
-$zindex-dropdown: 1000 !default;
-$zindex-sticky: 1020 !default;
-$zindex-fixed: 1030 !default;
-$zindex-mask: 1040 !default;
-$zindex-modal: 1050 !default;
-$zindex-popover: 1060 !default;
-$zindex-tooltip: 1070 !default;
+$zindex-content : 1000 !default;
+$zindex-dropdown: 1010 !default;
+$zindex-sticky  : 1020 !default;
+$zindex-fixed   : 1030 !default;
+$zindex-mask    : 1040 !default;
+$zindex-modal   : 1050 !default;
+$zindex-popover : 1060 !default;
+$zindex-tooltip : 1070 !default;
+$zindexes       :('content':$zindex-content, 'dropdown':$zindex-dropdown, 'sticky':$zindex-sticky, 'fixed':$zindex-fixed, 'mask':$zindex-mask, 'modal':$zindex-modal, 'popover':$zindex-popover, 'tooltip':$zindex-tooltip) !default;
 //
 // Color
 // This variable affects the `.bg-*`,`.txt-*`,`.gra-*`,`.sha-*` classes.
-$color-red: #e54d42; // 嫣红
-$color-orange: #f37b1d; // 桔橙
-$color-yellow: #fbbd08; // 明黄
-$color-olive: #8dc63f; // 橄榄
-$color-green: #39b54a; // 森绿
-$color-cyan: #1cbbb4; // 天青
-$color-blue: #007bff; // 天蓝
-$color-purple: #6739b6; // 姹紫
-$color-mauve: #9c26b0; // 木槿
-$color-pink: #e03997; // 桃粉
-$color-brown: #a5673f; // 棕褐
-$color-grey: #eee; // 玄灰 
-$color-gray: #aaa; // 草灰
-$color-silver: #777; // 银灰
-$color-black: #333; // 墨黑 
-$color-dark: #000; // 纯黑
-$color-white: #fff; // 雅白
-$color-theme: #39b54a; // 主题色
+$color-red    : #e54d42; // 嫣红
+$color-orange : #f37b1d; // 桔橙
+$color-yellow : #fbbd08; // 明黄
+$color-olive  : #8dc63f; // 橄榄
+$color-green  : #39b54a; // 森绿
+$color-cyan   : #1cbbb4; // 天青
+$color-blue   : #007bff; // 天蓝
+$color-purple : #6739b6; // 姹紫
+$color-mauve  : #9c26b0; // 木槿
+$color-pink   : #e03997; // 桃粉
+$color-brown  : #a5673f; // 棕褐
+$color-grey   : #eee; // 玄灰 
+$color-gray   : #aaa; // 草灰
+$color-silver : #777; // 银灰
+$color-black  : #333; // 墨黑 
+$color-dark   : #000; // 纯黑
+$color-white  : #fff; // 雅白
+$color-theme  : #39b54a; // 主题色
 $color-primary: #007bff; // 主题色
 // Color Map
 $colors: ('primary':$color-primary, 'red':$color-red, 'orange':$color-orange, 'yellow':$color-yellow, 'olive':$color-olive, 'green':$color-green, 'cyan':$color-cyan, 'blue':$color-blue, 'purple':$color-purple, 'mauve':$color-mauve, 'pink':$color-pink, 'brown':$color-brown, 'grey':$color-grey, 'gray':$color-gray, 'silver':$color-silver, 'black':$color-black, 'dark':$color-dark, 'white':$color-white) !default;
@@ -131,30 +133,30 @@ monospace !default;
 $font-family-primary: $font-family-sans-serif !default;
 // Font Size
 $font-size-primary: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-xl: $font-size-primary * 2.50 !default;
-$font-size-lg: $font-size-primary * 1.75 !default;
-$font-size-md: $font-size-primary * 1.50 !default;
-$font-size-sm: $font-size-primary * .875 !default;
-$font-size-xs: $font-size-primary * .750 !default;
-$font-size-h1: $font-size-primary * 2.50 !default;
-$font-size-h2: $font-size-primary * 2.00 !default;
-$font-size-h3: $font-size-primary * 1.75 !default;
-$font-size-h4: $font-size-primary * 1.25 !default;
-$font-size-h5: $font-size-primary * 1.00 !default;
-$font-size-h6: $font-size-primary * .875 !default;
+$font-size-xl     : $font-size-primary * 2.50 !default;
+$font-size-lg     : $font-size-primary * 1.75 !default;
+$font-size-md     : $font-size-primary * 1.50 !default;
+$font-size-sm     : $font-size-primary * .875 !default;
+$font-size-xs     : $font-size-primary * .750 !default;
+$font-size-h1     : $font-size-primary * 2.50 !default;
+$font-size-h2     : $font-size-primary * 2.00 !default;
+$font-size-h3     : $font-size-primary * 1.75 !default;
+$font-size-h4     : $font-size-primary * 1.25 !default;
+$font-size-h5     : $font-size-primary * 1.00 !default;
+$font-size-h6     : $font-size-primary * .875 !default;
 // Font Weight
 $font-weight-lighter: lighter !default;
-$font-weight-light: 300 !default;
-$font-weight-normal: 400 !default;
-$font-weight-bold: 700 !default;
-$font-weight-bolder: bolder !default;
+$font-weight-light  : 300 !default;
+$font-weight-normal : 400 !default;
+$font-weight-bold   : 700 !default;
+$font-weight-bolder : bolder !default;
 $font-weight-primary: $font-weight-normal !default;
 // Line Height
-$line-height-xs: .500 !default;
-$line-height-sm: 1.00 !default;
-$line-height-md: 1.50 !default;
-$line-height-lg: 2.00 !default;
-$line-height-xl: 2.50 !default;
+$line-height-xs     : .500 !default;
+$line-height-sm     : 1.00 !default;
+$line-height-md     : 1.50 !default;
+$line-height-lg     : 2.00 !default;
+$line-height-xl     : 2.50 !default;
 $line-height-primary: 1.50 !default;
 // 
 // Layout
@@ -179,7 +181,7 @@ sticky !default;
 // Grid
 //
 // This variable affects the `.xs-col-*`,`.sm-col-*`,`.md-col-*`,`.lg-col-*`,`.xl-col-*` classes.
-$grid-columns: 12 !default;
+$grid-columns     : 12 !default;
 $grid-gutter-width: 30px !default;
 //
 // YIQ
@@ -187,12 +189,12 @@ $grid-gutter-width: 30px !default;
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150 !default;
 // Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-dark: $color-dark !default;
+$yiq-dark : $color-dark !default;
 $yiq-light: $color-white !default;
 //
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
-$enable-gradients: true !default;
+$enable-gradients  : true !default;
 $enable-transitions: true !default;
 $enable-pointer-cursor-for-buttons: true !default;
