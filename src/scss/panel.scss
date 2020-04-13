@@ -7,116 +7,154 @@
 // }
 .panel {
     & {
-        // width: auto;
-        // height: auto;
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
+        position      : relative;
+        box-sizing    : border-box;
+        display       : flex;
         flex-direction: column;
-        font-size: 1rem;
-        flex-basis: auto;
+        font-size     : 1rem;
+        flex-basis    : auto;
         // font-family: -apple-system-font, Consolas, Helvetica Neue, Helvetica, sans-serif;
-        // overflow: auto;
+        // overflow   : auto;
     }
+
     &:before {
         top: 0;
     }
+
     &:after,
     &:before {
-        content: " ";
+        content : " ";
         position: absolute;
-        left: 0;
-        right: 0;
-        height: 0;
-        color: var(--white);
+        left    : 0;
+        right   : 0;
+        height  : 0;
+        color   : var(--white);
     }
+
     &:after {
         bottom: 0;
     }
-    &>#{&}-head {
-        position: relative;
-        margin-top: 0;
-        padding-top: 0;
-        border-bottom: 1px solid #ddd;
-    }
-    &>#{&}-head.spaced {
-        padding: 2rem;
-    }
-    &>#{&}-body {
-        width: 100%;
-        height: auto;
-        position: relative;
-        z-index: 0;
-        flex: 1;
-        padding-bottom: .75rem;
-    }
-    &>#{&}-body.spaced {
-        padding-right: .75rem;
-        padding-left: .75rem;
-        margin-right: auto;
-        margin-left: auto;
-    }
+
+    &>#{&}-head,
+    &>#{&}-body,
     &>#{&}-foot {
-        position: relative;
-        bottom: 0px;
-        margin-top: auto;
-        margin-bottom: .5rem;
-        padding-bottom: 0;
-        text-align: center;
+        box-sizing: border-box;
     }
+
+    &>#{&}-head {
+        position   : relative;
+        margin-top : 0;
+        top        : 0;
+        padding    : 0 $space-primary;
+        flex-shrink: 0;
+    }
+
+    &>#{&}-body {
+        width     : 100%;
+        height    : auto;
+        position  : relative;
+        z-index   : 0;
+        flex      : 1;
+        flex-basis: auto;
+        overflow  : auto;
+    }
+
+    &>#{&}-foot {
+        position   : relative;
+        bottom     : 0px;
+        padding    : 0 $space-primary;
+        text-align : center;
+        flex-shrink: 0;
+    }
+
     &-inner {
-        margin-left: auto;
+        margin-left : auto;
         margin-right: auto;
     }
+
     // 附加标题的 panel 
     &-title {
-        text-align: center;
-        font-size: 1rem;
-        font-weight: 400;
-        padding-top: .5rem;
+        text-align    : center;
+        font-size     : 1rem;
+        font-weight   : 400;
+        padding-top   : .5rem;
         padding-bottom: .5rem;
     }
+
     &-desc {
         margin-top: .25rem;
-        color: #888;
+        color     : #888;
         text-align: center;
-        font-size: .75rem;
+        font-size : .75rem;
     }
+
     // 带圆角的 panel 
-    &#{&}-rounded {
+    &#{&}--rounded,
+    &#{&}--rounded>&-head,
+    &#{&}--rounded>&-foot {
+        overflow: auto;
+    }
+
+    &#{&}--rounded {
         border-radius: .5rem .5rem .5rem .5rem;
     }
-    &#{&}-rounded>&-head {
-        border-top-left-radius: .5rem;
+
+    &#{&}--rounded>&-head {
+        border-top-left-radius : .5rem;
         border-top-right-radius: .5rem;
-        overflow: auto;
     }
-    &#{&}-rounded>&-foot {
-        border-bottom-left-radius: .5rem;
+
+    &#{&}--rounded>&-foot {
+        border-bottom-left-radius : .5rem;
         border-bottom-right-radius: .5rem;
-        overflow: auto;
     }
+
     // 带边框的 panel 
-    &#{&}-bordered {
+    &#{&}--bordered {
         border: 1px solid #ddd;
     }
-    &#{&}-bordered>#{&}-head {
-        border-bottom: 1px solid #ddd;
+
+    &#{&}--bordered>#{&}-head::after {
+        content                    : " ";
+        position                   : absolute;
+        left                       : 0;
+        top                        : 0;
+        right                      : 0;
+        height                     : 1px;
+        border-bottom              : 1px solid #ddd;
+        color                      : #fff;
+        transform-origin           : 0 0;
+        transform                  : scaleY(0.5);
+        // z-index                 : 2;
     }
-    &#{&}-bordered>#{&}-foot {
-        border-top: 1px solid #ddd;
+
+    &#{&}--bordered>#{&}-foot::before {
+        content                    : " ";
+        position                   : absolute;
+        left                       : 0;
+        top                        : 0;
+        right                      : 0;
+        height                     : 1px;
+        border-top                 : 1px solid #ddd;
+        color                      : #fff;
+        transform-origin           : 0 0;
+        transform                  : scaleY(0.5);
+        // z-index                 : 2;
     }
+
     // 带背景的 panel 
-    &#{&}-filled>#{&}-head,
-    &#{&}-filled #{&}-title {
+    &#{&}--filled>#{&}-head,
+    &#{&}--filled #{&}-title {
         // background-color: #eee; 
-        background-image: linear-gradient(rgb(255, 255, 255), rgb(245, 245, 245));
+        background-image   : linear-gradient(rgb(255, 255, 255), rgb(245, 245, 245));
     }
-    &#{&}-filled #{&}-desc {
+
+    &#{&}--filled #{&}-desc {
         background-color: #eee;
     }
-    &#{&}-filled>#{&}-body,
-    &#{&}-filled>#{&}-foot {
+
+    &#{&}--filled>#{&}-body,
+    &#{&}--filled>#{&}-foot {
         background-color: #fff;
     }
 }

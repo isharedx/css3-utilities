@@ -19,12 +19,12 @@
     >#{&}-aside {
         overflow: auto;
         box-sizing: border-box;
-        flex-shrink: 0
+        flex-shrink: 0;
     }
     >#{&}-head {
         padding: 0 $space-primary;
         box-sizing: border-box;
-        flex-shrink: 0
+        flex-shrink: 0;
     }
     >#{&}-body {
         display: block;
@@ -37,6 +37,6 @@
     >#{&}-foot {
         padding: 0 $space-primary;
         box-sizing: border-box;
-        flex-shrink: 0
+        flex-shrink: 0;
     }
 }

@@ -6,103 +6,184 @@
 // Dependences: {
 // }
 .cell {
-    position: relative;
-    box-sizing: border-box;
-    display: flex;
+    position      : relative;
+    box-sizing    : border-box;
+    display       : flex;
     flex-direction: row;
-    flex-basis: auto;
-    flex-wrap: nowrap;
-    align-items: center;
-    font-size: 1rem;
+    flex-basis    : auto;
+    flex-wrap     : nowrap;
+    align-items   : center;
+    font-size     : 1rem;
+
     &:after,
     &:before {
-        content: " ";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 1px;
-        display: table;
+        content         : " ";
+        position        : absolute;
+        left            : 0;
+        right           : 0;
+        height          : 1px;
+        display         : table;
         transform-origin: 0 0;
-        transform: scaleY(0.5);
-        color: var(--white);
-        z-index: 2;
+        transform       : scaleY(0.5);
+        color           : var(--white);
+        z-index         : 2;
     }
+
     &:before {
         top: 0;
     }
+
     &:after {
         bottom: 0;
     }
+
     &:first-child:before {
         display: none;
     }
+
     &>#{&}-head,
     &>#{&}-body,
     &>#{&}-foot {
-        padding: .75rem;
+        box-sizing: border-box;
     }
+
     &>#{&}-head {
+        order       : 0;
         justify-self: start;
-        order: 0;
+        flex-shrink: 0;
     }
+
     &>#{&}-body {
-        flex: 1;
         order: 1;
+        flex : 1;
+        flex-basis: auto;
+        overflow: auto;
     }
+
     &>#{&}-foot {
+        order       : 2;
         justify-self: end;
-        order: 2;
+        flex-shrink: 0;
     }
-    &-inner {
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    // 疏松的 cell 
-    &#{&}-loosed>#{&}-head,
-    &#{&}-loosed>#{&}-body,
-    &#{&}-loosed>#{&}-foot {
-        padding: 2rem;
-    }
-    // 紧凑的 cell 
-    &#{&}-condensed>#{&}-head,
-    &#{&}-condensed>#{&}-body,
-    &#{&}-condensed>#{&}-foot {
-        padding: none;
-    }
+
     // 带边线的 cell 
     &-wrapper>#{&} {
         border-bottom: 1px solid #ddd;
     }
-    &-wrapper:last-child {
-        border-bottom: none;
+
+    &-wrapper>#{&}:not(:last-child)::before {
+        content                    : " ";
+        position                   : absolute;
+        left                       : 0;
+        top                        : 0;
+        right                      : 0;
+        height                     : 1px;
+        border-top                 : 1px solid #ddd;
+        color                      : #fff;
+        transform-origin           : 0 0;
+        transform                  : scaleY(0.5);
+        // z-index                 : 2;
     }
+
+    // 带圆角的 cell 
+    &#{&}--rounded,
+    &#{&}--rounded>&-head,
+    &#{&}--rounded>&-foot {
+        overflow: auto;
+    }
+
+    &#{&}--rounded {
+        border-radius: .5rem .5rem .5rem .5rem;
+    }
+
+    &#{&}--rounded>&-head {
+        border-top-left-radius : .5rem;
+        border-bottom-left-radius : .5rem;
+    }
+
+    &#{&}--rounded>&-foot {
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+    }
+
+    // 带边框的 cell 
+    &#{&}--bordered {
+        border: 1px solid #ddd;
+    }
+
+    &#{&}--bordered>#{&}-head::after {
+        content                    : " ";
+        position                   : absolute;
+        left                       : 0;
+        top                        : 0;
+        right                      : 0;
+        height                     : 1px;
+        border-right              : 1px solid #ddd;
+        color                      : #fff;
+        transform-origin           : 0 0;
+        transform                  : scaleY(0.5);
+        // z-index                 : 2;
+    }
+
+    &#{&}--bordered>#{&}-foot::before {
+        content                    : " ";
+        position                   : absolute;
+        left                       : 0;
+        top                        : 0;
+        right                      : 0;
+        height                     : 1px;
+        border-left                 : 1px solid #ddd;
+        color                      : #fff;
+        transform-origin           : 0 0;
+        transform                  : scaleY(0.5);
+        // z-index                 : 2;
+    }
+    &-inner {
+        margin-top   : auto;
+        margin-bottom: auto;
+    }
+
+    // // 疏松的 cell 
+    // &#{&}-loosed>#{&}-head,
+    // &#{&}-loosed>#{&}-body,
+    // &#{&}-loosed>#{&}-foot {
+    //     padding: 2rem;
+    // }
+    // // 紧凑的 cell 
+    // &#{&}-condensed>#{&}-head,
+    // &#{&}-condensed>#{&}-body,
+    // &#{&}-condensed>#{&}-foot {
+    //     padding: none;
+    // }
+
     // 可接触的 cell 
-    &-access {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        color: inherit;
+    &--accessed {
+        color                      : inherit;
     }
-    &-access:active {
+
+    &--accessed:active {
         background-color: #ECECEC;
     }
-    &-access #{&}-foot {
-        padding-right: .75rem;
-        position: relative;
+
+    &--accessed>#{&}-foot {
+        padding-right: $space-primary;
+        position     : relative;
     }
-    &-access #{&}-foot:after {
-        content: " ";
-        display: inline-block;
-        height: 6px;
-        width: 6px;
-        border-width: 2px 2px 0 0;
-        border-color: #C8C8CD;
-        border-style: solid;
-        -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-        position: relative;
-        top: -2px;
-        position: absolute;
-        top: 50%;
-        margin-top: -4px;
-        right: 2px;
+
+    &--accessed>#{&}-foot::after {
+        content          : " ";
+        display          : inline-block;
+        height           : 6px;
+        width            : 6px;
+        border-width     : 2px 2px 0 0;
+        border-color     : #C8C8CD;
+        border-style     : solid;
+        transform        : matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        position         : relative;
+        top              : -2px;
+        position         : absolute;
+        top              : 50%;
+        margin-top       : -4px;
+        right            : 2px;
     }
 }

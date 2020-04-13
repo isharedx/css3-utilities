@@ -7,14 +7,21 @@
 // }
 .w,
 .width {
+
     @each $key,
     $ratio in $ratios {
         &-#{$key} {
             width: $ratio !important;
         }
+
+        &-#{$key}vw {
+            width: (100*$ratio)vw !important;
+        }
+
         &-min-#{$key} {
             min-width: $ratio !important;
         }
+
         &-max-#{$key} {
             max-width: $ratio !important;
         }
@@ -23,14 +30,21 @@
 
 .h,
 .height {
+
     @each $key,
     $ratio in $ratios {
         &-#{$key} {
             height: $ratio !important;
         }
+
+        &-#{$key}vh {
+            height: (100*$ratio)vh !important;
+        }
+
         &-min-#{$key} {
             min-height: $ratio !important;
         }
+
         &-max-#{$key} {
             max-height: $ratio !important;
         }
