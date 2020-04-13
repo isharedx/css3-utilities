@@ -1,0 +1,15 @@
+/**
+ * == Color ==
+ */
+
+//
+// Dependences: {
+//     ./maxins/variables.scss: $colors
+// }
+    // color
+    @each $key,
+    $color in $colors {
+        .#{$key} {
+            @include color($color);
+        }
+    }

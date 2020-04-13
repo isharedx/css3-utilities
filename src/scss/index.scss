@@ -9,43 +9,43 @@
 @import "mixins/tools";
 @import "root";
 @import "reset";
-// Box
-@import "sizing";
-@import "spacing";
-@import "border";
-@import "radius";
-@import "shadow";
-// Color
-@import "background";
-@import "gradient";
-@import "focus";
-@import "hover";
-@import "theme";
-// Text
-@import "text";
-// Layout
-@import "page";
-@import "container";
-@import "panel";
-@import "cell";
+/* Layout */
 @import "display";
 @import "position";
 @import "flex";
 @import "float";
 @import "grid";
-// Button
+/* Box */
+@import "sizing";
+@import "spacing";
+@import "border";
+@import "radius";
+@import "shadow";
+/* Color */
+@import "theme";
+@import "color";
+@import "background";
+@import "gradient";
+@import "focus";
+@import "hover";
+/* Text */
+@import "text";
+/* Button */
 @import "button";
-// Table
+/* Table */
 @import "table";
-// Form
+/* Form */
 // @import "form";
 // @import "input";
 // @import "textarea";
-// Component
+/* Component */
+@import "page";
+@import "container";
+@import "panel";
+@import "cell";
 @import "tips";
-// Help
+@import "animation";
+/* Other */
 @import "overflow";
 @import "vertical";
 @import "cursor";
-// Other
-@import "animation";

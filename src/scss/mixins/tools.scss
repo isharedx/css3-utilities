@@ -94,7 +94,7 @@
 // Dependences: {
 //      ../variables.scss: colors, $shadow-size,
 // }
-@mixin text($color:$color-black, $flag:false) {
+@mixin color($color:$color-black, $flag:false) {
     color: $color;
     @if $flag {
         a#{&}:hover,

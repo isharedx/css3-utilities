@@ -10,44 +10,65 @@
 
 // Shorthand
 .fixed {
-    &-t,
+
     &-top {
         position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: $zindex-fixed;
+        top     : 0;
+        right   : 0;
+        left    : 0;
+        z-index : $zindex-fixed;
     }
-    &-r,
+
     &-right {
         position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: $zindex-fixed;
+        top     : 0;
+        bottom  : 0;
+        left    : 0;
+        z-index : $zindex-fixed;
     }
-    &-b,
+
     &-bottom {
         position: fixed;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: $zindex-fixed;
+        right   : 0;
+        bottom  : 0;
+        left    : 0;
+        z-index : $zindex-fixed;
     }
-    &-l,
+
     &-left {
         position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: $zindex-fixed;
+        top     : 0;
+        right   : 0;
+        bottom  : 0;
+        z-index : $zindex-fixed;
     }
 }
 
-.sticky-top {
+.sticky {
     @supports (position: sticky) {
-        position: sticky;
-        top: 0;
-        z-index: $zindex-sticky;
+
+        &-top,
+        &-right,
+        &-bottom,
+        &-left {
+            position: sticky;
+            z-index : $zindex-sticky;
+        }
+
+        &-top {
+            top: 0;
+        }
+
+        &-right {
+            right: 0;
+        }
+
+        &-bottom {
+            bottom: 0;
+        }
+
+        &-left {
+            left: 0;
+        }
     }
 }
