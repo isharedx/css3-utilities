@@ -20,6 +20,7 @@
     >#{&}-body,
     >#{&}-foot{
         box-sizing: border-box;
+        position: relative;
     }
     >#{&}-aside {
         overflow: auto;
