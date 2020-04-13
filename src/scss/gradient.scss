@@ -8,6 +8,9 @@
 // }
 .gra,
 .gradient {
+    // @include gradient($color-theme);
+    background: var(--theme) linear-gradient(180deg, var(--theme-lighten), var(--theme)) repeat-x;
+    color: var(--theme-contrasted);
     @each $key,
     $color in $colors {
         &-#{$key} {

@@ -16,9 +16,19 @@
 //
 // Rows contain and clear the floats of your columns.
 @mixin grid-init-row() {
-    width: 100%;
-    display: flex;
+    // width: 100%;
+    // height: auto;
+    // display: flex;
     flex-wrap: wrap;
+    // overflow: hidden;
+    &::after,
+    &::before {
+        display: table;
+        content: ""
+    }
+    &::after {
+        clear: both
+    }
 }
 
 @mixin grid-init-columns() {
@@ -42,83 +52,68 @@
     }
 }
 
-@mixin grid-calc-columns($prefix, $type) {
+@mixin responsive($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin grid-calc-columns($prefix) {
+    .#{$prefix}col-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+    .#{$prefix}col-push-auto {
+        left: auto;
+    }
+    .#{$prefix}col-pull-auto {
+        right: auto;
+    }
+    .#{$prefix}col-order-first {
+        order: -1;
+    }
+    .#{$prefix}col-order-last {
+        order: $grid-columns+1;
+    }
     @for $index from 0 through $grid-columns {
+        $width: percentage($index / $grid-columns);
         // width
-        @if ($type=="width") {
-            @if ($index==0) {
-                .#{$prefix}col-auto {
-                    flex: 0 0 auto;
-                    width: auto;
-                    max-width: 100%;
-                }
-            }
-            $width: percentage($index / $grid-columns);
-            .#{$prefix}col-#{$index} {
-                flex: 0 0 $width;
-                width: $width;
-                max-width: $width;
-            }
+        .#{$prefix}col-#{$index} {
+            flex: 0 0 $width;
+            width: $width;
+            max-width: $width;
         }
         // push
-        @else if ($type=="push") {
-            @if($index==0) {
-                .#{$prefix}col-push-auto {
-                    left: auto;
-                }
-            }
-            .#{$prefix}col-push-#{$index} {
-                left: percentage(($index / $grid-columns));
-            }
+        .#{$prefix}col-push-#{$index} {
+            left: $width;
         }
         // pull
-        @else if ($type=="pull") {
-            @if ($index==0) {
-                .#{$prefix}col-pull-auto {
-                    right: auto;
-                }
-            }
-            .#{$prefix}col-pull-#{$index} {
-                right: percentage(($index / $grid-columns));
-            }
+        .#{$prefix}col-pull-#{$index} {
+            right: $width;
         }
         // order
-        @else if ($type=="order") {
-            @if ($index==0) {
-                .#{$prefix}col-order-first {
-                    order: -1;
-                }
-                .#{$prefix}col-order-last {
-                    order: $grid-columns+1;
-                }
-            }
-            .#{$prefix}col-order-#{$index} {
-                order: $index;
-            }
+        .#{$prefix}col-order-#{$index} {
+            order: $index;
         }
         // offset
-        @else if ($type=="offset") {
-            .#{$prefix}col-offset-#{$index} {
-                margin-left: percentage(($index / $grid-columns));
-            }
+        .#{$prefix}col-offset-#{$index} {
+            margin-left: $width;
         }
     }
 }
 
 // Create grid for specific class
 @mixin grid-make-columns() {
-    $properties: width, pull, push, order, offset;
     @include grid-init-columns();
     @each $key,
     $bp in $breakpoints {
-        @each $property in $properties {
-            $prefix:#{$key}-;
-            @if $key=="primary" {
-                $prefix: "";
-            }
-            @media screen and (min-width: $bp) {
-                @include grid-calc-columns($prefix, $property);
-            }
+        $prefix:#{$key}-;
+        @if $key=="primary" {
+            $prefix: "";
+        }
+        @include responsive($bp) {
+            @include grid-calc-columns($prefix);
         }
     }
 }

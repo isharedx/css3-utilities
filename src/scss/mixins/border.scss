@@ -2,29 +2,37 @@
 // Border Mixins
 //
 // Dependences: {
-//     ./maxins/variables.scss: sizes, directions, colors,
+//     ./maxins/variables.scss: solids, directions, colors,
 // }
 @mixin border-make-size() {
-    @each $dir-key,
-    $dir-val in $directions {
-        @each $size-key,
-        $size-val in $sizes {
-            $suffix: -#{$size-key};
-            @if $size-key=="primary" {
-                $suffix: "";
-                $size-val: 1px;
-            }
-            @if $dir-key=="primary" {
-                &#{$suffix} {
-                    border: $size-val solid $color-gray;
-                }
-            }
-            @else {
-                &-#{$dir-key}#{$suffix},
-                &-#{$dir-val}#{$suffix} {
-                    border-#{$dir-val}: $size-val solid $color-gray;
-                }
-            }
+    @each $key,
+    $size in $solids {
+        $suffix: -#{$key};
+        @if $key=="primary" {
+            $suffix: "";
+        }
+        &#{$suffix} {
+            border: $size solid $color-grey;
+        }
+        &-x#{$suffix},
+        &-t#{$suffix},
+        &-top#{$suffix} {
+            border-top: $size solid $color-grey;
+        }
+        &-y#{$suffix},
+        &-r#{$suffix},
+        &-right#{$suffix} {
+            border-right: $size solid $color-grey;
+        }
+        &-x#{$suffix},
+        &-b#{$suffix},
+        &-bottom#{$suffix} {
+            border-bottom: $size solid $color-grey;
+        }
+        &-y#{$suffix},
+        &-l#{$suffix},
+        &-left#{$suffix} {
+            border-left: $size solid $color-grey;
         }
     }
 }

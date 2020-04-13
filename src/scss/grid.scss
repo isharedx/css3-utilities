@@ -10,15 +10,13 @@
 // Container widths
 //
 // Set the container width, and override it for fixed navbars in media queries.
-.container {
-    @include grid-init-container();
-    width: 90%;
-}
-
-.container-fluid {
-    @include grid-init-container();
-}
-
+// .container {
+//     @include grid-init-container();
+//     width: 90%;
+// }
+// .container-fluid {
+//     @include grid-init-container();
+// }
 // Row
 //
 // Rows contain and clear the floats of your columns.
@@ -32,6 +30,11 @@
     @include grid-init-row();
     margin-right: 0;
     margin-left: 0;
+}
+
+.row-condensed [class*=col] {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 // Columns

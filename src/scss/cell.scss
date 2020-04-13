@@ -1,0 +1,108 @@
+/**
+ * == Cell ==
+ */
+
+//
+// Dependences: {
+// }
+.cell {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 1rem;
+    &:after,
+    &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        display: table;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+        color: var(--white);
+        z-index: 2;
+    }
+    &:before {
+        top: 0;
+    }
+    &:after {
+        bottom: 0;
+    }
+    &:first-child:before {
+        display: none;
+    }
+    &>#{&}-head,
+    &>#{&}-body,
+    &>#{&}-foot {
+        padding: .75rem;
+    }
+    &>#{&}-head {
+        justify-self: start;
+        order: 0;
+    }
+    &>#{&}-body {
+        flex: 1;
+        order: 1;
+    }
+    &>#{&}-foot {
+        justify-self: end;
+        order: 2;
+    }
+    &-inner {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    // 疏松的 cell 
+    &#{&}-loosed>#{&}-head,
+    &#{&}-loosed>#{&}-body,
+    &#{&}-loosed>#{&}-foot {
+        padding: 2rem;
+    }
+    // 紧凑的 cell 
+    &#{&}-condensed>#{&}-head,
+    &#{&}-condensed>#{&}-body,
+    &#{&}-condensed>#{&}-foot {
+        padding: none;
+    }
+    // 带边线的 cell 
+    &-wrapper>#{&} {
+        border-bottom: 1px solid #ddd;
+    }
+    &-wrapper:last-child {
+        border-bottom: none;
+    }
+    // 可接触的 cell 
+    &-access {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        color: inherit;
+    }
+    &-access:active {
+        background-color: #ECECEC;
+    }
+    &-access #{&}-foot {
+        padding-right: .75rem;
+        position: relative;
+    }
+    &-access #{&}-foot:after {
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        border-width: 2px 2px 0 0;
+        border-color: #C8C8CD;
+        border-style: solid;
+        -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        position: relative;
+        top: -2px;
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+        right: 2px;
+    }
+}

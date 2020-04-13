@@ -2,28 +2,60 @@
 // Background Mixins
 //
 // Dependences: {
-//      ./tools.scss: directions,sizes,
+//      ./tools.scss: directions,space-keys,
 // }
-@mixin spacing-make($parent) {
-    @each $dir-key,
-    $dir-val in $directions {
-        @each $size-key,
-        $size-val in $sizes {
-            $suffix: -#{$size-key};
-            @if $size-key==primary {
-                $suffix: "";
+@mixin spacing-make($property) {
+    @each $key,
+    $space in $spaces {
+        $suffix: -#{$key};
+        @if $key=='primary' {
+            $suffix: "";
+            &-auto {
+                #{$property}: auto !important;
             }
-            @if $dir-key==primary {
-                &#{$suffix} {
-                    #{$parent}: $size-val;
-                }
+            &-y-auto,
+            &-t-auto,
+            &-top-auto {
+                #{$property}-top: auto !important;
             }
-            @else {
-                &-#{$dir-key}#{$suffix},
-                &-#{$dir-val}#{$suffix} {
-                    #{$parent}-#{$dir-val}: $size-val;
-                }
+            &-x-auto,
+            &-r-auto,
+            &-right-auto {
+                #{$property}-right: auto !important;
             }
+            &-y-auto,
+            &-b-auto,
+            &-bottom-auto {
+                #{$property}-bottom: auto !important;
+            }
+            &-x-auto,
+            &-l-auto,
+            &-left-auto {
+                #{$property}-left: auto !important;
+            }
+        }
+        &#{$suffix} {
+            #{$property}: $space !important;
+        }
+        &-y#{$suffix},
+        &-t#{$suffix},
+        &-top#{$suffix} {
+            #{$property}-top: $space !important;
+        }
+        &-x#{$suffix},
+        &-r#{$suffix},
+        &-right#{$suffix} {
+            #{$property}-right: $space !important;
+        }
+        &-y#{$suffix},
+        &-b#{$suffix},
+        &-bottom#{$suffix} {
+            #{$property}-bottom: $space !important;
+        }
+        &-x#{$suffix},
+        &-l#{$suffix},
+        &-left#{$suffix} {
+            #{$property}-left: $space !important;
         }
     }
 }

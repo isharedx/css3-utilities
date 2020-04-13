@@ -171,24 +171,19 @@ color 有: -red&#124;-orange&#124;-yellow&#124;-olive&#124;-green&#124;-cyan&#12
 > 其中 side 有: &#124;auto&#124;start&#124;end&#124;center&#124;baseline&#124;stretch
 
 ## float
-
-.float
-
-类名的命名形式为: clear{-top|-right|-bottom|-left|-none|-both|fix}
-top     -
-right   -
-bottom  -
-left    -
-none    -
-both    -
-fix     - 
+- 浮动（float）
+类名的命名形式为: float-{left&#124;right&#124;top&#124;bottom&#124;start&#124;end&#124;none}
+特别地，使用 .float 默认向左浮动。
+- 清除浮动（clear）
+类名的命名形式为: clear-{top&#124;right&#124;bottom&#124;left&#124;none&#124;both}
+特别地，可以使用 clearfix 清除两端的浮动。
 ## focus
 
 ## functions
 
 ## gradient
 类名的命名形式为: {gradient|gra}-{color}
-color 有: -red|-orange|-yellow|-olive|-green|-cyan|-blue|-purple|-mauve|-pink|-brown|-grey|-gray|-silver|-black|-dark|-white|-theme 
+color 有: -red&#124;-orange&#124;-yellow&#124;-olive&#124;-green&#124;-cyan&#124;-blue&#124;-purple&#124;-mauve&#124;-pink&#124;-brown&#124;-grey&#124;-gray&#124;-silver&#124;-black&#124;-dark&#124;-white&#124;-theme 
 red     -  嫣红
 orange  -  桔橙
 yellow  -  明黄

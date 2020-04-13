@@ -1,0 +1,74 @@
+/**
+ * == Textarea ==
+ */
+
+//
+// Dependences: {
+// }
+.textarea {
+    $root: #{&};
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    font-size: $font-size-sm;
+    &-inner {
+        display: block;
+        resize: vertical;
+        padding: $space-sm $space-md;
+        line-height: 1.5;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: inherit;
+        color: $color-silver;
+        background-color: #FFF;
+        background-image: none;
+        border: $solid-xs solid $color-grey;
+        border-radius: $solid-sm;
+        transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+        &::-webkit-input-placeholder {
+            color: $color-gray;
+        }
+        &:-ms-input-placeholder {
+            color: $color-gray;
+        }
+        &::-ms-input-placeholder {
+            color: $color-gray;
+        }
+        &::placeholder {
+            color: $color-gray;
+        }
+        &:hover {
+            border-color: $color-gray;
+        }
+        &:focus {
+            outline: 0;
+            border-color: var(--theme);
+        }
+    }
+    &.disabled {
+        #{$root}-inner {
+            background-color: lighten($color-grey, 10%);
+            border-color: $color-grey;
+            color: $color-gray;
+            cursor: not-allowed;
+            &::-webkit-input-placeholder {
+                color: $color-gray;
+            }
+            &:-ms-input-placeholder {
+                color: $color-gray;
+            }
+            &::-ms-input-placeholder {
+                color: $color-gray;
+            }
+            &::placeholder {
+                color: $color-gray;
+            }
+        }
+    }
+    &.exceeded {
+        #{$root}-inner {
+            border-color: $color-red;
+        }
+    }
+}

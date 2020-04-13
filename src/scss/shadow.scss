@@ -8,21 +8,25 @@
 $shadow-size: 0 .1rem .2rem 0;
 .sha,
 .shadow {
-    box-shadow: $shadow-size $color-theme;
+    box-shadow: $shadow-size var(--theme);
     // shadow warp 
     &-warp {
         position: relative;
+        // box-shadow: $shadow-size var(--theme-lighten);
         &:before,
         &:after {
             position: absolute;
             content: "";
             top: .5rem;
             bottom: .75rem;
-            left: .5rem;
             width: 50%;
-            box-shadow: 0 .75rem .5rem rgba(0, 0, 0, .2);
-            transform: rotate(-3deg);
+            box-shadow: 0 .75rem .5rem var(--theme);
             z-index: -1;
+        }
+        &:before {
+            left: .5rem;
+            right: auto;
+            transform: rotate(-3deg);
         }
         &:after {
             right: .5rem;
@@ -34,9 +38,10 @@ $shadow-size: 0 .1rem .2rem 0;
     &-blur {
         position: relative;
         &:before {
-            content: "";
+            content: " ";
             display: block;
             background: inherit;
+            // background-color: var(--theme);
             -webkit-filter: blur(.25rem);
             filter: blur(.25rem);
             position: absolute;

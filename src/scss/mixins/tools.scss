@@ -42,12 +42,7 @@
 //      ../variables.scss: $enable-gradients,
 // }
 @mixin gradient($color) {
-    @if $enable-gradients {
-        background: $color linear-gradient(180deg, lighten($color, 15%), $color) repeat-x;
-    }
-    @else {
-        background-color: $color;
-    }
+    background: $color linear-gradient(180deg, lighten($color, 15%), $color) repeat-x;
     color: contrast-color($color);
 }
 

@@ -4,6 +4,30 @@
 // Dependences: {
 //     ./maxins/variables.scss: sizes,
 // }
+@mixin radius-init-top-left($radius) {
+    @if $enable-rounded {
+        border-top-left-radius: $radius;
+    }
+}
+
+@mixin radius-init-top-right($radius) {
+    @if $enable-rounded {
+        border-top-right-radius: $radius;
+    }
+}
+
+@mixin radius-init-bottom-right($radius) {
+    @if $enable-rounded {
+        border-bottom-right-radius: $radius;
+    }
+}
+
+@mixin radius-init-bottom-left($radius) {
+    @if $enable-rounded {
+        border-bottom-left-radius: $radius;
+    }
+}
+
 @mixin radius-init-all($size) {
     border-radius: $size;
 }
@@ -46,49 +70,77 @@
     }
 }
 
+@mixin radius-init-circle() {
+    &-circle {
+        @include radius-init-all(3000rem);
+    }
+    &-t-circle,
+    &-top-circle {
+        @include radius-init-top(3000rem);
+    }
+    &-r-circle,
+    &-right-circle {
+        @include radius-init-right(3000rem);
+    }
+    &-b-circle,
+    &-bottom-circle {
+        @include radius-init-bottom(3000rem);
+    }
+    &-l-circle,
+    &-left-circle {
+        @include radius-init-left(3000rem);
+    }
+}
+
+@mixin radius-init-rounded() {
+    &-rounded {
+        @include radius-init-all(50%);
+    }
+    &-t-rounded,
+    &-top-rounded {
+        @include radius-init-top(50%);
+    }
+    &-r-rounded,
+    &-right-rounded {
+        @include radius-init-right(50%);
+    }
+    &-b-rounded,
+    &-bottom-rounded {
+        @include radius-init-bottom(50%);
+    }
+    &-l-rounded,
+    &-left-rounded {
+        @include radius-init-left(50%);
+    }
+}
+
 @mixin radius-make() {
-    @each $dir-key,
-    $dir-val in $directions {
-        @each $size-key,
-        $size-val in $sizes {
-            $suffix: -#{$size-key};
-            @if $dir-key=="primary" {
-                // Like: radius
-                @if $size-key=="primary" {
-                    // Like: radius
-                    $suffix: "";
-                    &-circle {
-                        @include radius-init($dir-val, 50%);
-                    }
-                    &-rounded {
-                        @include radius-init($dir-val, 3000rem);
-                    }
-                }
-                // Like: radius-xs, ...
-                &#{$suffix} {
-                    @include radius-init($dir-val, $size-val);
-                }
-            }
-            @else {
-                // Like: radius-left, ...
-                @if $size-key=="primary" {
-                    // Like: radius, ...
-                    $suffix: "";
-                    &-#{$dir-key}-circle,
-                    &-#{$dir-val}-circle {
-                        @include radius-init($dir-val, 50%);
-                    }
-                    &-#{$dir-key}-rounded,
-                    &-#{$dir-val}-rounded {
-                        @include radius-init($dir-val, 3000rem);
-                    }
-                }
-                // Like: radius-t-xs,radius-top-xs, ...
-                &-#{$dir-key}#{$suffix},
-                &-#{$dir-val}#{$suffix} {
-                    @include radius-init($dir-val, $size-val);
-                }
-            }
+    @include radius-init-circle();
+    @include radius-init-rounded();
+    @each $key,
+    $size in $sizes {
+        $suffix: -#{$key};
+        @if $key=="primary" {
+            $suffix: "";
+        }
+        &#{$suffix} {
+            @include radius-init-all($size);
+        }
+        &-t#{$suffix},
+        &-top#{$suffix} {
+            @include radius-init-top($size);
+        }
+        &-r#{$suffix},
+        &-right#{$suffix} {
+            @include radius-init-right($size);
+        }
+        &-b#{$suffix},
+        &-bottom#{$suffix} {
+            @include radius-init-bottom($size);
+        }
+        &-l#{$suffix},
+        &-left#{$suffix} {
+            @include radius-init-left($size);
         }
     }
 }

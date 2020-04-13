@@ -6,28 +6,57 @@
 //
 // abbreviations
 // 
-$abbreviations: ( width:w, height:h, margin:m, padding:p, border:b, radius:r, // box
-top:t, right:r, bottom:b, left:l, // direction
+$abbreviations: (width:w, height:h, margin:m, padding:p, border:b, radius:r, // box
+top :t, right:r, bottom:b, left:l, // direction
 "super small":xs, small:sm, middle:md, large:lg, "super large":xl, // size
 );
 //
 // Variables
 // --------------------------------------------------
 //
-// Size
+// ratios
+// This variable affects the `.w-*` and `.h-*` classes.
+$ratios: (20:20%, 25:25%, 33:percentage(1/3), 40:40%, 50:50%, 60:60%, 66:percentage(2/3), 75:75%, 80:80%, 100:100%, );
 //
-$size-primary: 1rem;
-$size-no: ($size-primary * .00);
-$size-xs: ($size-primary * .10);
-$size-sm: ($size-primary * .30);
-$size-md: ($size-primary * .75);
-$size-lg: ($size-primary * 1.5);
-$size-xl: ($size-primary * 3.0);
+// Size
+// This variable affects the `.r-*` classes.
+$size-base: 1rem;
+$size-no: ($size-base * .00);
+$size-xs: ($size-base * .25);
+$size-sm: ($size-base * .50);
+$size-md: ($size-base * 1.0);
+$size-lg: ($size-base * 1.5);
+$size-xl: ($size-base * 3.0);
+$size-primary: ($size-base * .75);
 // Size Map
 $sizes:('primary':$size-primary, 'no':$size-no, 'xs':$size-xs, 'sm':$size-sm, 'md':$size-md, 'lg':$size-lg, 'xl':$size-xl, ) !default;
 //
-// Breakpoint
+// Size
+// This variable affects the `.b-*` classes.
+$solid-base: 10px;
+$solid-no: ($solid-base * .00);
+$solid-xs: ($solid-base * .10);
+$solid-sm: ($solid-base * .30);
+$solid-md: ($solid-base * .60);
+$solid-lg: ($solid-base * 1.0);
+$solid-xl: ($solid-base * 1.5);
+$solid-primary: ($solid-base * .10);
+$solids:('primary':$solid-primary, 'no':$solid-no, 'xs':$solid-xs, 'sm':$solid-sm, 'md':$solid-md, 'lg':$solid-lg, 'xl':$solid-xl, ) !default;
+// 
+// Space
+// This variable affects the `.m-*` and `.p-*` classes.
+$space-base: 1rem;
+$space-no: ($space-base * .00);
+$space-xs: ($space-base * .25);
+$space-sm: ($space-base * .50);
+$space-md: ($space-base * 1.0);
+$space-lg: ($space-base * 2.0);
+$space-xl: ($space-base * 3.0);
+$space-primary: ($space-base * .75);
+$spaces :('primary':$space-primary, 'no':$space-no, 'xs':$space-xs, 'sm':$space-sm, 'md':$space-md, 'lg':$space-lg, 'xl':$space-xl, ) !default;
 //
+// Breakpoint
+// This variable affects the `.xs-col-*`,`.sm-col-*`,`.md-col-*`,`.lg-col-*`,`.xl-col-*` classes.
 $breakpoint-xs: 0px;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -40,7 +69,11 @@ $breakpoints: ('primary':$breakpoint-primary, 'xs':$breakpoint-xs, 'sm':$breakpo
 // Direction
 // 
 $directions: ("primary":all, "t":top, "r":right, "b":bottom, "l":left);
-$sides: ("primary":all, "t":top, "r":right, "b":bottom, "l":left); // !notes: to replace the var $directions in next version.
+// This variable affects the `.m-*`,`.p-*`,`,`.b-*`.r-*` classes.
+$sides: ("primary":all, "x":"horizontal", "y":"vertical", "t":top, "r":right, "b":bottom, "l":left); // !notes: to replace the var $directions in next version.
+// 
+// Z-Index
+// 
 $zindex-dropdown: 1000 !default;
 $zindex-sticky: 1020 !default;
 $zindex-fixed: 1030 !default;
@@ -50,7 +83,7 @@ $zindex-popover: 1060 !default;
 $zindex-tooltip: 1070 !default;
 //
 // Color
-//
+// This variable affects the `.bg-*`,`.txt-*`,`.gra-*`,`.sha-*` classes.
 $color-red: #e54d42; // 嫣红
 $color-orange: #f37b1d; // 桔橙
 $color-yellow: #fbbd08; // 明黄
@@ -68,9 +101,10 @@ $color-silver: #777; // 银灰
 $color-black: #333; // 墨黑 
 $color-dark: #000; // 纯黑
 $color-white: #fff; // 雅白
-$color-theme: #4fc08d; // 主题色
+$color-theme: #39b54a; // 主题色
+$color-primary: #007bff; // 主题色
 // Color Map
-$colors: ('red':$color-red, 'orange':$color-orange, 'yellow':$color-yellow, 'olive':$color-olive, 'green':$color-green, 'cyan':$color-cyan, 'blue':$color-blue, 'purple':$color-purple, 'mauve':$color-mauve, 'pink':$color-pink, 'brown':$color-brown, 'grey':$color-grey, 'gray':$color-gray, 'silver':$color-silver, 'black':$color-black, 'dark':$color-dark, 'white':$color-white, 'theme':$color-theme) !default;
+$colors: ('primary':$color-primary, 'red':$color-red, 'orange':$color-orange, 'yellow':$color-yellow, 'olive':$color-olive, 'green':$color-green, 'cyan':$color-cyan, 'blue':$color-blue, 'purple':$color-purple, 'mauve':$color-mauve, 'pink':$color-pink, 'brown':$color-brown, 'grey':$color-grey, 'gray':$color-gray, 'silver':$color-silver, 'black':$color-black, 'dark':$color-dark, 'white':$color-white) !default;
 //
 // Typography
 //
@@ -116,10 +150,15 @@ $font-weight-bold: 700 !default;
 $font-weight-bolder: bolder !default;
 $font-weight-primary: $font-weight-normal !default;
 // Line Height
-$line-height-primary: 1.5 !default;
+$line-height-xs: .500 !default;
+$line-height-sm: 1.00 !default;
+$line-height-md: 1.50 !default;
+$line-height-lg: 2.00 !default;
+$line-height-xl: 2.50 !default;
+$line-height-primary: 1.50 !default;
 // 
 // Layout
-// 
+// This variable affects the `.display-*` classes.
 $displays: none,
 inline,
 inline-block,
@@ -139,11 +178,12 @@ sticky !default;
 //
 // Grid
 //
-// Grid columns
+// This variable affects the `.xs-col-*`,`.sm-col-*`,`.md-col-*`,`.lg-col-*`,`.xl-col-*` classes.
 $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 //
 // YIQ
+// This variable used by function contrast-color() .
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150 !default;
 // Customize the light and dark text colors for use in our YIQ color contrast function.

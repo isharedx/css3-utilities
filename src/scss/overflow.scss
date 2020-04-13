@@ -1,0 +1,21 @@
+/**
+ * == Overflow ==
+ */
+
+//
+// Dependences: {
+// }
+.overflow {
+    &-hidden {
+        overflow: hidden;
+    }
+    &-scroll {
+        overflow: scroll;
+    }
+    &-auto {
+        overflow: auto;
+    }
+    &-visible {
+        overflow: visible;
+    }
+}

@@ -1,0 +1,20 @@
+/**
+ * == Theme ==
+ */
+
+//
+// Dependences: {
+// }
+.theme {
+    @each $key,
+    $color in $colors {
+        @if $key !="primary" {
+            &-#{$key} {
+                --theme: #{$color};
+                --theme-darken: #{darken($color, 15%)};
+                --theme-lighten: #{lighten($color, 15%)};
+                --theme-contrasted: #{contrast-color($color)};
+            }
+        }
+    }
+}

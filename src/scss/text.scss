@@ -29,6 +29,7 @@
     white-space: pre-wrap;
     overflow: auto;
     vertical-align: baseline;
+    color: var(--theme);
     // white space
     &-nowrap {
         white-space: nowrap;
@@ -93,7 +94,6 @@
         font-weight: 700;
     }
     // color
-    @include text(); // $color-black
     @each $key,
     $color in $colors {
         &-#{$key} {

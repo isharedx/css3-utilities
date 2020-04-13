@@ -1,0 +1,21 @@
+/**
+ * == Cursor ==
+ */
+
+//
+// Dependences: {
+// }
+.cursor {
+    &-default {
+        cursor: default;
+    }
+    &-pointer {
+        cursor: pointer;
+    }
+    &-help {
+        cursor: help;
+    }
+    &-move {
+        cursor: move;
+    }
+}

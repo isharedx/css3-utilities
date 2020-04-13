@@ -1,38 +1,28 @@
-@mixin button-variant($color:$color-theme) {
+@mixin button-variant($background:$color-theme) {
     // var
-    $background: contrast-color($color);
-    $border: darken($color, 5%);
+    // $background: $background;
+    $color: contrast-color($background);
+    $border: darken($background, 5%);
     // reset
     color: $color;
     background-color: $background;
     border-color: $border;
+    &:hover {
+        color: $color;
+        background-color: lighten($background, 15%);
+    }
     &:focus,
     &.focus {
         color: $color;
-        background-color: darken($background, 10%);
-        border-color: darken($border, 25%);
-    }
-    &:hover {
-        color: $color;
-        background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
+        outline: 0;
+        box-shadow: 0 0 0 .1rem darken($background, 10%);
     }
     &:active,
     &.active {
         color: $color;
-        background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
-        &:hover,
-        &:focus,
-        &.focus {
-            color: $color;
-            background-color: darken($background, 17%);
-            border-color: darken($border, 25%);
-        }
-    }
-    &:active,
-    &.active {
         background-image: none;
+        outline: 0;
+        box-shadow: 0 0 0 .1rem darken($background, 10%);
     }
     &.disabled,
     &[disabled],
@@ -40,6 +30,46 @@
         &:hover,
         &:focus,
         &.focus {
+            color: $color;
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+}
+
+@mixin button-plain($background:$color-theme) {
+    // var
+    // $background: $background;
+    $color: contrast-color($background);
+    $border: darken($background, 5%);
+    // reset
+    color: contrast-color($background, $dark: $color-theme, $light: $background);
+    background-color: lighten($background, 35%);
+    border-color: $border;
+    &:hover {
+        color: $color;
+        background-color: $background;
+    }
+    &:focus,
+    &.focus {
+        color: contrast-color($background, $dark: $color-theme, $light: $background);
+        outline: 0;
+        box-shadow: 0 0 0 .1rem darken($background, 10%);
+    }
+    &:active,
+    &.active {
+        color: contrast-color($background, $dark: $color-theme, $light: $background);
+        background-image: none;
+        outline: 0;
+        box-shadow: 0 0 0 .1rem darken($background, 10%);
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color;
             background-color: $background;
             border-color: $border;
         }

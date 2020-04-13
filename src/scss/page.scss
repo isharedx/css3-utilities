@@ -1,0 +1,76 @@
+/**
+ * == Page ==
+ */
+
+//
+// Dependences: {
+// }
+.page {
+    & {
+        min-width: 100%;
+        min-height: 100%;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        font-family: -apple-system-font, Consolas, Helvetica Neue, Helvetica, sans-serif;
+        background-color: rgba(240, 240, 240, 1);
+    }
+    &:before {
+        top: 0;
+    }
+    &:after,
+    &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0;
+        color: var(--white);
+    }
+    &:after {
+        bottom: 0;
+    }
+    &-head {
+        position: relative;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    &-head.spaced {
+        padding: 2rem;
+    }
+    &-head>#{&}-title {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    &-head>.desc {
+        margin-top: .25rem;
+        color: #888;
+        text-align: center;
+        font-size: .75rem;
+    }
+    &-body {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 0;
+        flex: 1;
+        padding-bottom: .75rem;
+    }
+    &-body.spaced {
+        padding-right: .75rem;
+        padding-left: .75rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    &-foot {
+        position: relative;
+        bottom: 0px;
+        margin-top: auto;
+        margin-bottom: .5rem;
+        padding-bottom: 0;
+        text-align: center;
+    }
+}
