@@ -1,6 +1,13 @@
-// stylelint-disable declaration-no-important
-// Common values
+/**
+ * == Position ==
+ */
+
+//
+// Dependences: {
+// }
 .position {
+    $positions: static, relative, absolute, fixed, sticky !default;
+
     @each $position in $positions {
         &-#{$position} {
             position: $position !important;

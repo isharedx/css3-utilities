@@ -1,0 +1,19 @@
+/**
+ * == ZIndex ==
+ */
+
+//
+// Dependences: {
+// }
+
+.zindex{
+    @each $key, $zindex in $zindexes {
+        $suffix: -#{$key};
+        @if $key=="primary" {
+            $suffix: '';
+        }
+        &#{$suffix}{
+        z-index: $zindex !important;
+        }
+    }
+}

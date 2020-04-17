@@ -19,11 +19,13 @@ function compile() {
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer("last 3 version", "safari 5", "ie 8", "ie 9"))
         .pipe(concat('css3-utilities.css'))
-        .pipe(gulp.dest("./dist/scss"))
+        .pipe(gulp.dest("./dist/scss/"))
         .pipe(rename('style.min.css'))
         .pipe(cssver())
         .pipe(cssmin())
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
+        .pipe(rename('css3-utilities.min.css'))
+        .pipe(gulp.dest('./'));
 }
 
 // 监控 sass 文件

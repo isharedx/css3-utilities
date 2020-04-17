@@ -1,0 +1,16 @@
+/**
+ * == Visibility ==
+ */
+
+//
+// Dependences: {
+// }
+.visibility {
+    $visibilities: hidden, collapse, visible !default;
+
+    @each $visibility in $visibilities {
+        &-#{$visibility} {
+            visibility: $visibility !important;
+        }
+    }
+}
