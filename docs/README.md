@@ -138,6 +138,7 @@ Where notation is one of:<br/>
 - h,height - for classes that set height
 
 Where size is one of:<br/>
+- 0 - for classes that set the width or height to 0%<br/>
 - 20 - for classes that set the width or height to 20%<br/>
 - 25 - for classes that set the width or height to 25%<br/>
 - 33 - for classes that set the width or height to 33%<br/>
@@ -462,25 +463,25 @@ You can use the classes .h<1|2|3|4|5|6> to set the text's font size.
 The classes are named using the format <txt|text>-<sha|shadow>-{color}.
 
 Where color is one of:<br/>
-- red - for classes that set the text-shadow to red<br/>
-- orange - for classes that set the text-shadow to orange<br/>
-- yellow - for classes that set the text-shadow to yellow<br/>
-- olive - for classes that set the text-shadow to olive<br/>
-- green - for classes that set the text-shadow to green<br/>
-- cyan - for classes that set the text-shadow to cyan<br/>
-- blue - for classes that set the text-shadow to blue<br/>
-- purple - for classes that set the text-shadow to purple<br/>
-- mauve - for classes that set the text-shadow to mauve<br/>
-- pink - for classes that set the text-shadow to pink<br/>
-- brown - for classes that set the text-shadow to brown<br/>
-- grey - for classes that set the text-shadow to grey<br/>
-- gray - for classes that set the text-shadow to gray<br/>
-- silver - for classes that set the text-shadow to silver<br/>
-- black - for classes that set the text-shadow to black<br/>
-- dark - for classes that set the text-shadow to dark<br/>
-- white - for classes that set the text-shadow to white<br/>
-- theme - for classes that set the text-shadow to theme color<br/>
-- primary - for classes that set the text-shadow to primary color<br/>
+- red - for classes that set the text-shadow to red(#e54d42)<br/>
+- orange - for classes that set the text-shadow to orange(#f37b1d)<br/>
+- yellow - for classes that set the text-shadow to yellow(#fbbd08)<br/>
+- olive - for classes that set the text-shadow to olive(#8dc63f)<br/>
+- green - for classes that set the text-shadow to green(#39b54a)<br/>
+- cyan - for classes that set the text-shadow to cyan(#1cbbb4)<br/>
+- blue - for classes that set the text-shadow to blue(#007bff)<br/>
+- purple - for classes that set the text-shadow to purple(#6739b6)<br/>
+- mauve - for classes that set the text-shadow to mauve(#9c26b0)<br/>
+- pink - for classes that set the text-shadow to pink(#e03997)<br/>
+- brown - for classes that set the text-shadow to brown(#a5673f)<br/>
+- grey - for classes that set the text-shadow to grey(#eee)<br/>
+- gray - for classes that set the text-shadow to gray(#aaa)<br/>
+- silver - for classes that set the text-shadow to silver(#777)<br/>
+- black - for classes that set the text-shadow to black(#333)<br/>
+- dark - for classes that set the text-shadow to dark(#000)<br/>
+- white - for classes that set the text-shadow to white(#fff)<br/>
+- theme - for classes that set the text-shadow to theme color(#39b54a)<br/>
+- primary - for classes that set the text-shadow to primary color(#007bff)<br/>
 
 
 ## Button
@@ -603,13 +604,18 @@ Where type is one of:<br/>
 
 ### overflow
 
-The classes are named using the format .overflow-{style}.
+The classes are named using the format .overflow{side}-{style}.
+
+Where side is one of:<br/>
+- -x - for classes that set overflow-x stlyle<br/>
+- -y - for classes that set overflow-y stlyle<br/>
+- blank - for classes that set overflow stlyle<br/>
 
 Where style is one of:<br/>
-- hidden - for classes that set overflow stlyle<br/>
-- scroll - for classes that set overflow stlyle<br/>
-- auto - for classes that set overflow stlyle<br/>
-- visible - for classes that set overflow stlyle<br/>
+- hidden - for classes that set overflow to hidden<br/>
+- scroll - for classes that set overflow to scroll<br/>
+- auto - for classes that set overflow to auto<br/>
+- visible - for classes that set overflow to visible<br/>
 
 
 ### vertical
@@ -617,24 +623,53 @@ Where style is one of:<br/>
 The classes are named using the format .overflow-{style}.
 
 Where style is one of:<br/>
-- baseline - for classes that set vertical-align stlyle<br/>
-- top - for classes that set vertical-align stlyle<br/>
-- middle - for classes that set vertical-align stlyle<br/>
-- bottom - for classes that set vertical-align stlyle<br/>
-- text-bottom - for classes that set vertical-align stlyle<br/>
-- text-top - for classes that set vertical-align stlyle<br/>
-- sub - for classes that set vertical-align stlyle<br/>
-- super - for classes that set vertical-align stlyle<br/>
+- baseline - for classes that set vertical-align to baseline<br/>
+- top - for classes that set vertical-align to top<br/>
+- middle - for classes that set vertical-align to middle<br/>
+- bottom - for classes that set vertical-align to bottom<br/>
+- text-bottom - for classes that set vertical-align to text<br/>
+- text-top - for classes that set vertical-align to text<br/>
+- sub - for classes that set vertical-align to sub<br/>
+- super - for classes that set vertical-align to super<br/>
 
 
 ### cursor
 
-The classes are named using the format .overflow-{style}.
+The classes are named using the format .cusor-{style}.
 
 Where style is one of:<br/>
-- default - for classes that set cursor stlyle<br/>
-- pointer - for classes that set cursor stlyle<br/>
-- help - for classes that set cursor stlyle<br/>
-- move - for classes that set cursor stlyle<br/>
+- default - for classes that set cursor to default<br/>
+- pointer - for classes that set cursor to pointer<br/>
+- help - for classes that set cursor to help<br/>
+- move - for classes that set cursor to move<br/>
+
+
+### visibility
+
+The classes are named using the format .visibility-{style}.
+
+Where style is one of:<br/>
+- visible - for classes that set visibility to visible<br/>
+- hidden - for classes that set visibility to hidden<br/>
+- collapse - for classes that set visibility to collapse<br/>
+
+
+### zindex
+
+The classes are named using the format .zindex{suffix}.
+
+Where suffix is one of:<br/>
+- -content - for classes that set z-index to 1000<br/>
+- -static - for classes that set z-index to 1000<br/>
+- -relative - for classes that set z-index to 1000<br/>
+- -dropdown - for classes that set z-index to1010<br/>
+- -sticky - for classes that set z-index to 1020<br/>
+- -absolute - for classes that set z-index to 1030<br/>
+- -fixed - for classes that set z-index to 1030<br/>
+- -mask - for classes that set z-index to1040<br/>
+- -modal - for classes that set z-index to 1050<br/>
+- -popover - for classes that set z-index to 1060<br/>
+- -tooltip - for classes that set z-index to 1070<br/>
+- blank - for classes that set z-index to 0<br/>
 
 

@@ -109,6 +109,15 @@ $color-dark   : #000; // 纯黑
 $color-white  : #fff; // 雅白
 $color-theme  : #39b54a; // 主题色
 $color-primary: #007bff; // 主题色
+// light		#F5F5F5
+// smoke		#DCDCDC
+// grey		#C0C0C0
+// gray		#A9A9A9
+// silver		#808080
+// ?		#696969
+// ?		#555
+// black		#333
+// dark		#000
 // Color Map
 $colors: ('primary':$color-primary, 'red':$color-red, 'orange':$color-orange, 'yellow':$color-yellow, 'olive':$color-olive, 'green':$color-green, 'cyan':$color-cyan, 'blue':$color-blue, 'purple':$color-purple, 'mauve':$color-mauve, 'pink':$color-pink, 'brown':$color-brown, 'grey':$color-grey, 'gray':$color-gray, 'silver':$color-silver, 'black':$color-black, 'dark':$color-dark, 'white':$color-white) !default;
 //

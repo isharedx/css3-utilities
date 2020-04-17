@@ -6,16 +6,18 @@
 // Dependences: {
 // }
 .overflow {
-    &-hidden {
-        overflow: hidden;
-    }
-    &-scroll {
-        overflow: scroll;
-    }
-    &-auto {
-        overflow: auto;
-    }
-    &-visible {
-        overflow: visible;
+    $overflows: hidden, scroll, auto, visible !default;
+    overflow: auto;
+
+    @each $overflow in $overflows {
+        &-#{$overflow} {
+            overflow: $overflow !important;
+        }
+        &-x-#{$overflow} {
+            overflow: $overflow !important;
+        }
+        &-y-#{$overflow} {
+            overflow: $overflow !important;
+        }
     }
 }
