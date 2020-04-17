@@ -1,6 +1,6 @@
 {
     "name": "css3-utilities",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "A few common CSS3 tool classes are encapsulated in this project.",
     "main": "index.js",
     "scripts": {
