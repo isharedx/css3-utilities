@@ -10,12 +10,15 @@
 
     @each $key,
     $ratio in $ratios {
+        @if $ratio!=0{
+            $ration:percentage($ratio);
+        }
         &-#{$key} {
             width: $ratio !important;
         }
 
         &-#{$key}vw {
-            width: (100*$ratio)vw !important;
+            width: (100vw*$ratio) !important;
         }
 
         &-min-#{$key} {
@@ -33,12 +36,15 @@
 
     @each $key,
     $ratio in $ratios {
+        @if $ratio!=0{
+            $ration:percentage($ratio);
+        }
         &-#{$key} {
             height: $ratio !important;
         }
 
         &-#{$key}vh {
-            height: (100*$ratio)vh !important;
+            height: (100vh*$ratio) !important;
         }
 
         &-min-#{$key} {
