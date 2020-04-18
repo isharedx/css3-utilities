@@ -10,15 +10,17 @@
 
     @each $key,
     $ratio in $ratios {
-        @if $ratio!=0{
-            $ration:percentage($ratio);
-        }
-        &-#{$key} {
-            width: $ratio !important;
-        }
 
         &-#{$key}vw {
-            width: (100vw*$ratio) !important;
+            width: 100vw*$ratio !important;
+        }
+
+        @if $ratio!=0{
+            $ratio:percentage($ratio);
+        }
+
+        &-#{$key} {
+            width: $ratio !important;
         }
 
         &-min-#{$key} {
@@ -36,15 +38,17 @@
 
     @each $key,
     $ratio in $ratios {
-        @if $ratio!=0{
-            $ration:percentage($ratio);
-        }
-        &-#{$key} {
-            height: $ratio !important;
-        }
 
         &-#{$key}vh {
-            height: (100vh*$ratio) !important;
+            height: 100vh*$ratio !important;
+        }
+
+        @if $ratio!=0{
+            $ratio:percentage($ratio);
+        }
+
+        &-#{$key} {
+            height: $ratio !important;
         }
 
         &-min-#{$key} {
